@@ -1,0 +1,67 @@
+C:\Users\arnev\Documents\School\2e jaar\2e periode\Project\PROJECT\DOTNET\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csprojResolveAssemblyReference.cache
+C:\Users\arnev\Documents\School\2e jaar\2e periode\Project\PROJECT\DOTNET\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csproj.CoreCompileInputs.cache
+C:\Users\arnev\Documents\School\2e jaar\2e periode\Project\PROJECT\DOTNET\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\arnev\Documents\School\2e jaar\2e periode\Project\PROJECT\DOTNET\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfoInputs.cache
+C:\Users\arnev\Documents\School\2e jaar\2e periode\Project\PROJECT\DOTNET\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfo.cs
+C:\Users\arnev\Documents\School\2e jaar\2e periode\Project\PROJECT\DOTNET\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.deps.json
+C:\Users\arnev\Documents\School\2e jaar\2e periode\Project\PROJECT\DOTNET\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.runtimeconfig.json
+C:\Users\arnev\Documents\School\2e jaar\2e periode\Project\PROJECT\DOTNET\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.runtimeconfig.dev.json
+C:\Users\arnev\Documents\School\2e jaar\2e periode\Project\PROJECT\DOTNET\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\arnev\Documents\School\2e jaar\2e periode\Project\PROJECT\DOTNET\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.pdb
+C:\Users\arnev\Documents\School\2e jaar\2e periode\Project\PROJECT\DOTNET\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\arnev\Documents\School\2e jaar\2e periode\Project\PROJECT\DOTNET\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.pdb
+C:\Users\wanne\Desktop\Project II\dotnet\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.deps.json
+C:\Users\wanne\Desktop\Project II\dotnet\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.runtimeconfig.json
+C:\Users\wanne\Desktop\Project II\dotnet\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.runtimeconfig.dev.json
+C:\Users\wanne\Desktop\Project II\dotnet\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\wanne\Desktop\Project II\dotnet\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.pdb
+C:\Users\wanne\Desktop\Project II\dotnet\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csprojResolveAssemblyReference.cache
+C:\Users\wanne\Desktop\Project II\dotnet\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csproj.CoreCompileInputs.cache
+C:\Users\wanne\Desktop\Project II\dotnet\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfoInputs.cache
+C:\Users\wanne\Desktop\Project II\dotnet\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfo.cs
+C:\Users\wanne\Desktop\Project II\dotnet\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\wanne\Desktop\Project II\dotnet\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.pdb
+C:\Users\wanne\Desktop\Project II\dotnet\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csprojResolveAssemblyReference.cache
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csproj.CoreCompileInputs.cache
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfoInputs.cache
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfo.cs
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.pdb
+C:\Users\wanne\Desktop\Project II\dotnet2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csprojResolveAssemblyReference.cache
+C:\Users\wanne\Desktop\Project II\dotnet2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csproj.CoreCompileInputs.cache
+C:\Users\wanne\Desktop\Project II\dotnet2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\wanne\Desktop\Project II\dotnet2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfoInputs.cache
+C:\Users\wanne\Desktop\Project II\dotnet2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfo.cs
+C:\Users\wanne\Desktop\Project II\dotnet2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\wanne\Desktop\Project II\dotnet2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.pdb
+C:\Users\wanne\Desktop\Project II\dotnet2\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.deps.json
+C:\Users\wanne\Desktop\Project II\dotnet2\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.runtimeconfig.json
+C:\Users\wanne\Desktop\Project II\dotnet2\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.runtimeconfig.dev.json
+C:\Users\wanne\Desktop\Project II\dotnet2\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\wanne\Desktop\Project II\dotnet2\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.pdb
+C:\Users\wanne\Desktop\Project II\net\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.deps.json
+C:\Users\wanne\Desktop\Project II\net\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.runtimeconfig.json
+C:\Users\wanne\Desktop\Project II\net\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.runtimeconfig.dev.json
+C:\Users\wanne\Desktop\Project II\net\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\wanne\Desktop\Project II\net\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.pdb
+C:\Users\wanne\Desktop\Project II\net\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csprojResolveAssemblyReference.cache
+C:\Users\wanne\Desktop\Project II\net\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csproj.CoreCompileInputs.cache
+C:\Users\wanne\Desktop\Project II\net\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\wanne\Desktop\Project II\net\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfoInputs.cache
+C:\Users\wanne\Desktop\Project II\net\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfo.cs
+C:\Users\wanne\Desktop\Project II\net\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\wanne\Desktop\Project II\net\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.pdb
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csprojResolveAssemblyReference.cache
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csproj.CoreCompileInputs.cache
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfoInputs.cache
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfo.cs
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e2\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.pdb
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e2\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.deps.json
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e2\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.runtimeconfig.json
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e2\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.runtimeconfig.dev.json
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e2\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\Lorenz Baele\Source\Repos\dotnet-g2e2\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.pdb
