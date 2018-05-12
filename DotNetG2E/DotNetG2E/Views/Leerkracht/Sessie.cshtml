@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "Sessie";
+}
+
+
+<div class="container">
+    <br />
+    <a role="button" class="btn btn-warning pull-right" asp-area="" asp-controller="Leerkracht" asp-action="Index">terug</a>
+    <a role="button" class="btn btn-default pull-right disabled">Start Sessie</a>
+    <a role="button" class="btn btn-default pull-right">Activeer Sessie</a>
+    <h3>Sessie informatie: </h3>
+
+
+
+
+    <p> Naam: Sessie 1</p>
+
+
+    <p> Status: Niet Actief</p> 
+
+</div>
+
+<div class="container">
+    <h3>Groepen in deze sessie: </h3>
+
+    <div class="list-group">
+        @*@foreach (groep in geselecteerde sessie) ;*@
+        <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">Group 1</h4>
+            <ul>
+                <li>student 1</li>
+                <li>student 2</li>
+                <li>student 3</li>
+                <li>student 4</li>
+            </ul>
+        </a>
+        <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">Group 2</h4>
+            <ul>
+                <li>jef</li>
+                <li>bob</li>
+                <li>stef</li>
+                <li>koen</li>
+            </ul>
+        </a>
+        <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">Group 3</h4>
+            <ul>
+                <li>Anne</li>
+                <li>Sara</li>
+                <li>Mieke</li>
+                <li>Emma</li>
+            </ul>
+        </a>
+    </div>
+</div>
+
+
