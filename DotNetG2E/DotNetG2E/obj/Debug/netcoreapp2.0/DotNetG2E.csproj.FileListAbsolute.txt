@@ -77,3 +77,15 @@ C:\Users\Lorenz Baele\Source\Repos\Projecten_G2E\DotNetG2E\DotNetG2E\obj\Debug\n
 C:\Users\Lorenz Baele\Source\Repos\Projecten_G2E\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfo.cs
 C:\Users\Lorenz Baele\Source\Repos\Projecten_G2E\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.dll
 C:\Users\Lorenz Baele\Source\Repos\Projecten_G2E\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.pdb
+C:\Users\wanne\Desktop\Project II\New folder\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.deps.json
+C:\Users\wanne\Desktop\Project II\New folder\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.runtimeconfig.json
+C:\Users\wanne\Desktop\Project II\New folder\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.runtimeconfig.dev.json
+C:\Users\wanne\Desktop\Project II\New folder\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\wanne\Desktop\Project II\New folder\DotNetG2E\DotNetG2E\bin\Debug\netcoreapp2.0\DotNetG2E.pdb
+C:\Users\wanne\Desktop\Project II\New folder\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csprojResolveAssemblyReference.cache
+C:\Users\wanne\Desktop\Project II\New folder\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.csproj.CoreCompileInputs.cache
+C:\Users\wanne\Desktop\Project II\New folder\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\wanne\Desktop\Project II\New folder\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfoInputs.cache
+C:\Users\wanne\Desktop\Project II\New folder\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.AssemblyInfo.cs
+C:\Users\wanne\Desktop\Project II\New folder\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.dll
+C:\Users\wanne\Desktop\Project II\New folder\DotNetG2E\DotNetG2E\obj\Debug\netcoreapp2.0\DotNetG2E.pdb
