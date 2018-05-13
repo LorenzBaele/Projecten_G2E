@@ -34,10 +34,11 @@ namespace DotNetG2E.Models.Domain
 		{
             this.Name = name;
             this.Desc = desc;
-            this.DayStarted = DayStarted;
+            this.DayStarted = dayStarted;
             this.IsDayEducation = isDayEducation;
             this.HasFeedback = hasFeedback;
             this.IsActive = false;
+            this.SessionCode = 10;
         }
 		public Sessie(String name, String desc, DateTime dayStarted, Boolean isDayEducation, Boolean hasFeedback, IEnumerable<Group> groups, BoB bob) : this()
 		{

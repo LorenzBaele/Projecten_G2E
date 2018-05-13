@@ -22,9 +22,10 @@ namespace DotNetG2E.Controllers
 			_sessieRepository = sessieRepository;
 		}
 
+        [HttpGet]
 		public IActionResult Index(Leerkracht leerkracht)
         {
-			ViewData["Message"] = "De overzichtpagine voor leerkrachten";
+			ViewData["Message"] = "De overzichtpagina voor leerkrachten";
 
             //return View();
             //IndexViewModel vm = new IndexViewModel()
@@ -32,7 +33,6 @@ namespace DotNetG2E.Controllers
             //	Sessions = leerkracht.GetSessies().Select(t=> new SessieViewModel(t))
             //};
 
-            ViewData["Sessies"] = _sessieRepository.GetAll();
             return View(_sessieRepository.GetAll());
 
         }
@@ -42,6 +42,7 @@ namespace DotNetG2E.Controllers
 			
             ViewData["Message"] = "Overzichtspagina van een sessie";
 
+            
             return View("~/Views/Leerkracht/Sessie.cshtml");
         }
 
@@ -53,9 +54,9 @@ namespace DotNetG2E.Controllers
 			return View("~/Views/Leerkracht/Sessie2.cshtml");
 		}
 
-		public IActionResult Sessie(string name)
+		public IActionResult Sessie(int id)
         {
-            return Content($"{name}");
+            return Content(id.ToString());
         }
     }
 }
