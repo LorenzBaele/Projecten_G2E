@@ -37,6 +37,7 @@ namespace DotNetG2E.Models.Domain
             this.DayStarted = DayStarted;
             this.IsDayEducation = isDayEducation;
             this.HasFeedback = hasFeedback;
+            this.IsActive = false;
         }
 		public Sessie(String name, String desc, DateTime dayStarted, Boolean isDayEducation, Boolean hasFeedback, IEnumerable<Group> groups, BoB bob) : this()
 		{

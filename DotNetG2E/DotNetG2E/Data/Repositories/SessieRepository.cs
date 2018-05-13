@@ -21,6 +21,7 @@ namespace DotNetG2E.Data.Repositories
 		{
             //return _sessies.ToList();
             Sessie sessie1 = new Sessie("Wiskunde", "Moeilijk", new DateTime(1862, 12, 19), true, true);
+            sessie1.IsActive = true;
             Sessie sessie2 = new Sessie("Aardrijkskunde", "Makkelijk", new DateTime(1862, 12, 19), true, true);
 
             List<Sessie> sessies = new List<Sessie>();

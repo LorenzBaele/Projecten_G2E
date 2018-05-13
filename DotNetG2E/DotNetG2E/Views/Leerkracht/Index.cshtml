@@ -46,8 +46,23 @@
                                                         <span class="media-meta pull-right">@item.DayStarted</span>
                                                         <h4 class="title">
                                                             @item.Name
-                                                            <span class="pull-right" name="nActief">(Niet Actief)</span>
                                                         </h4>
+
+
+                                                        @if (item.IsActive)
+                                                        {
+                                                            <span class="pull-right" name="Actief" >Actief</span>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="pull-right" name="nActief" >Niet Actief</span>
+
+                                                        }
+
+
+
+
                                                         <p class="summary">@item.Desc</p>
                                                         <a role="button" class="btn btn-default" asp-area="" asp-controller="Leerkracht" asp-action="Select_Sessie">Open</a>
                                                     </div>
