@@ -30,10 +30,10 @@ namespace DotNetG2E.Data
 				//generate some exercises
 				//String name, String task, String result, String feedback, String goal, String category, int timeLimit, IEnumerable<int> modifier
 
-				//Exercise testE1 = new Exercise() { Name = "Krachthuis van de cel" };
-				//Exercise testE2 = new Exercise() { Name = "Translatie van beweging" };
-				//Exercise testE3 = new Exercise() { Name = "Matige vergelijking" };
-				//Exercise testE4 = new Exercise() { Name = "Gemakkelijke vergelijking" };
+				Exercise testE1 = new Exercise() { Name = "Krachthuis van de cel" };
+				Exercise testE2 = new Exercise() { Name = "Translatie van beweging" };
+				Exercise testE3 = new Exercise() { Name = "Matige vergelijking" };
+				Exercise testE4 = new Exercise() { Name = "Gemakkelijke vergelijking" };
 
 				////generate some actions
 				Actie testA = new Actie();
@@ -48,10 +48,22 @@ namespace DotNetG2E.Data
 				//private Sessie sessie1 = new Sessie("Wiskunde", "Moeilijk", new DateTime(1862, 12, 19), true, true);
 				//private Sessie sessie2 = new Sessie("Aardrijkskunde", "Makkelijk", new DateTime(1862, 12, 19), true, true);
 				//String name, String desc, DateTime dayStarted, Boolean isDayEducation, Boolean hasFeedback, int sessionCode, boolean isActive, boolean hasStarted
-				Sessie testS1 = new Sessie() { Name = "Wiskunde", Desc="Moeilijk", DayStarted= new DateTime(1862, 12, 19) , SessionCode = 123, IsActive = true, HasStarted= false};
-				Sessie testS2 = new Sessie() { Name = "Aardrijkskunde", Desc = "Makkelijk", DayStarted = new DateTime(1892, 10, 16), SessionCode = 321, IsActive = false, HasStarted = false };
-				Sessie[] sessies = new Sessie[] { testS1, testS2 };
-				_context.Sessies.AddRange(sessies);
+				//int s1 = 123;
+				//int s2 = 321;
+
+				//int g1 = 1;
+				//int g2 = 2;
+
+				//Session_Group sg1 = new Session_Group() { GroupId = g1, SessionCode = s1 };
+				//Session_Group sg2 = new Session_Group() { GroupId = g2, SessionCode = s2 };
+				
+
+				//Sessie testS1 = new Sessie() { Name = "Wiskunde", Desc = "Moeilijk", DayStarted = new DateTime(1862, 12, 19), SessionCode = s1, IsActive = true, HasStarted = false, SessionGroup = sg1 };
+				//Sessie testS2 = new Sessie() { Name = "Aardrijkskunde", Desc = "Makkelijk", DayStarted = new DateTime(1892, 10, 16), SessionCode = s2, IsActive = false, HasStarted = false, SessionGroup = sg2 };
+				//Sessie[] sessies = new Sessie[] { testS1, testS2 };
+				//_context.Sessies.AddRange(sessies);
+				
+
 				//generate a user
 				Leerkracht jan = new Leerkracht()
 				{

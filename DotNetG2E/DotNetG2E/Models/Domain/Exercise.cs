@@ -7,17 +7,17 @@ namespace DotNetG2E.Models.Domain
 {
 	public class Exercise
 	{
-		public int ExerciseId { get; private set; }
-		public String Name { get; private set; }
-		public String Task { get; private set; }
-		public String Result { get; private set; }
-		public String Feedback { get; private set; }
-		public String Goal { get; private set; }
-		public String Category { get; private set; }
-		public int TimeLimit { get; private set; }
-		public IEnumerable<Modifier> Modifiers { get; private set; }
+		public int ExerciseId { get;  set; }
+		public String Name { get;  set; }
+		public String Task { get; set; }
+		public String Result { get;  set; }
+		public String Feedback { get;  set; }
+		public String Goal { get;  set; }
+		public String Category { get;  set; }
+		public int TimeLimit { get;  set; }
+		public IEnumerable<Modifier> Modifiers { get;  set; }
 		public int BoBId { get; set; }
-		public BoB BoB { get; private set; }
+		public BoB BoB { get;  set; }
 
 		public Exercise()
 		{
