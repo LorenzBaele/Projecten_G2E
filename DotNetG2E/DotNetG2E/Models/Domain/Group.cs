@@ -12,7 +12,7 @@ namespace DotNetG2E.Models.Domain
 		public String Name { get; private set; }
 		public IEnumerable<Pupil> Pupils { get; private set; }
 		//public int SessionCode { get; set; }
-		public Sessie Session { get; private set; }
+		public Session_Group SessionGroup { get; internal set; }
 
 		public Group()
 		{

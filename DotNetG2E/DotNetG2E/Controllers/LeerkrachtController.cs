@@ -10,12 +10,14 @@ using DotNetG2E.Models.SessieViewModels;
 
 namespace DotNetG2E.Controllers
 {
-    public class LeerkrachtController : Controller
+	[Authorize(Policy = "Leerkracht")]
+	[ServiceFilter(typeof(LeerkrachtFilter))]
+	public class LeerkrachtController : Controller
     {
 		private readonly ILeerkrachtRepository _leerkrachtRepository;
 		private readonly ISessieRepository _sessieRepository;
-		//[Authorize(Policy = "Leerkracht")]
-		//[ServiceFilter(typeof(LeerkrachtFilter))]
+
+
 		public LeerkrachtController(ILeerkrachtRepository leerkrachtRepository, ISessieRepository sessieRepository)
 		{
 			_leerkrachtRepository = leerkrachtRepository;

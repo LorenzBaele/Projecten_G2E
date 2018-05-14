@@ -9,7 +9,7 @@ namespace DotNetG2E.Models.Domain
 	public class Sessie
 	{
 
-		private Group _selectedGroup;
+		//private Group _selectedGroup;
 
 
 		public int SessionCode { get; private set; }
@@ -18,16 +18,16 @@ namespace DotNetG2E.Models.Domain
 		public DateTime DayStarted { get; private set; }
 		public Boolean IsDayEducation { get; private set; }
 		public Boolean HasFeedback { get; private set; }
-		public IEnumerable<Group> Groups { get; private set; }
-		public int GroupId { get; set; }
-		public Group SelectedGroup { get; set; }
-		public int BoxId { get; set; }
+		public Group Groups { get; private set; }
+		//public Group SelectedGroup { get; set; }
+		public Session_Group SessionGroup { get; set; }
 		public BoB Box { get; set; }
 		public Boolean IsActive { get; set; }
+		public Boolean HasStarted { get; set; }
 
 		public Sessie()
 		{
-            Groups = new List<Group>();
+            //Groups = new List<Group>();
 		}
 
 		public Sessie(String name, String desc, DateTime dayStarted, Boolean isDayEducation, Boolean hasFeedback) : this()

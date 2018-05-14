@@ -12,11 +12,23 @@ namespace DotNetG2E.Data.Mappers
 		public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Session_Group> builder)
 		{
 			builder.ToTable("SessionGroup");
-			builder.HasKey(t => t.GroupId);
+			builder.HasKey(t => t.SessionCode);
 			builder.Property(t => t.GroupId)
 				.IsRequired();
 			builder.Property(t => t.SessionCode)
 				.IsRequired();
+
+			builder.HasMany(t => t.Sessions)
+				.WithOne()
+				.IsRequired()
+				//.HasForeignKey(t => t.SessionCode)
+				.OnDelete(DeleteBehavior.Restrict);
+
+			builder.HasMany(t => t.Groups)
+				.WithOne()
+				.IsRequired()
+				//.HasForeignKey(t => t.GroupId)
+				.OnDelete(DeleteBehavior.Restrict);
 		}
 	}
 }

@@ -7,9 +7,11 @@ namespace DotNetG2E.Models.Domain
 {
 
 	public class Session_Group
-    {
+	{
 		public int SessionCode { get; set; }
 		public int GroupId { get; set; }
+		public IEnumerable<Group> Groups { get; set; }
+		public IEnumerable<Sessie> Sessions {get;set;}
 
 	}
 }

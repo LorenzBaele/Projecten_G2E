@@ -27,6 +27,8 @@ namespace DotNetG2E.Data.Mappers
                 .HasMaxLength(255);
             builder.Property(t => t.IsActive)
                 .IsRequired();
+			builder.Property(t => t.HasStarted)
+				.IsRequired();
 			builder.Property(t => t.HasFeedback)
 				.IsRequired();
 			builder.Property(t => t.IsDayEducation)
@@ -37,11 +39,6 @@ namespace DotNetG2E.Data.Mappers
 			//associations
 
 
-			builder.HasMany(t => t.Groups)
-				.WithOne(t => t.Session)
-				.IsRequired()
-				//.HasForeignKey(t => t.SessionCode)
-				.OnDelete(DeleteBehavior.Restrict);
 
 			builder.HasOne(t => t.Box)
 				.WithMany()

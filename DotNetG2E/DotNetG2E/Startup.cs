@@ -86,10 +86,10 @@ namespace DotNetG2E
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            //filter client side with javascript or server round trip
-            //inbetween classes moeten er bij bij many to many
+			//filter client side with javascript or server round trip
+			//inbetween classes moeten er bij bij many to many
 			//Lots and lots of bugs in this -_-
-			//breakOutBoxInitializer.InitializeData().Wait();
-        }
+			breakOutBoxInitializer.InitializeData().Wait();
+		}
     }
 }

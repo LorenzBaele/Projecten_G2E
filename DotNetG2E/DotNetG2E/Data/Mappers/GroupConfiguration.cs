@@ -21,6 +21,7 @@ namespace DotNetG2E.Data.Mappers
 			//builder.Property(t => t.Pupils)
 			//	.IsRequired();
 
+
 			builder.HasMany(t => t.Pupils)
 				.WithOne()
 				.IsRequired()

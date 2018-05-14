@@ -50,8 +50,8 @@ namespace DotNetG2E.Data
 					Email = "jan.peeters@hogent.be"
 				};
 
-				Console.WriteLine(jan.Email);
-				Console.ReadLine();
+				//Console.WriteLine(jan.Email);
+				//Console.ReadKey();
 
 				_context.Leerkrachten.Add(jan);
 				ApplicationUser user1 = new ApplicationUser { UserName = jan.Email, Email = jan.Email };
