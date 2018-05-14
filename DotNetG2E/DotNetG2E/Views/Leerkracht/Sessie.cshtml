@@ -47,43 +47,45 @@
 <div class="container">
     <h3>Groepen </h3>
 
-    <div class="list-group">
-        @{
 
-            if (ViewBag.Sessie.Box == null )
+    @{
+
+        if (ViewBag.Sessie.Box == null && ViewBag.Sessie.Groups.Count == 0)
+        {
+            <p>Box is null && groups is empty</p>
+
+        }
+
+        if (ViewBag.Sessie.Groups.Count > 0)
+        {
+            int i = 1;
+            foreach (var group in ViewBag.Sessie.Groups)
             {
-                <p>Box is null;</p>
-
-            }
-
-            if (ViewBag.Sessie.Groups.Count > 0)
-            {
-                int i = 1;
-                foreach (var group in ViewBag.Sessie.Groups)
-                {
+                <div class="list-group">
                     <a href="group${@i}" class="list-group-item">
-                        <h4 class="list-group-item-heading">Group @i</h4>
+                        <h4 class="list-group-item-heading">@group.Name</h4>
                         <ul>
-                            @{ foreach (var student in group)
+                            @{ foreach (var student in group.Pupils)
                                 {
-                                    <li>@student</li>
+                                    <li>@student.Name</li>
                                 }
                             }
                         </ul>
                     </a>
+                </div>
 
-                    i++;
-                }
-
+                i++;
             }
-            else
-            {
-                <p>Er zijn nog geen groepen in de huidige sessie.</p>
 
-            }
         }
+        else
+        {
+            <p>Er zijn nog geen groepen in de huidige sessie.</p>
 
-    </div>
+        }
+    }
+
+
 </div>
 
 
