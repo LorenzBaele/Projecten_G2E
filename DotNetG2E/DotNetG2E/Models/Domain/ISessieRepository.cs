@@ -9,6 +9,7 @@ namespace DotNetG2E.Models.Domain
     {
 		IEnumerable<Sessie> GetAll();
         Sessie GetBy(int SessionCode);
+        void SaveChanges();
 
     }
 }

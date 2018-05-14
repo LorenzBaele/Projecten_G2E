@@ -25,7 +25,7 @@
     }
     else
     {
-        <a role="button" class="btn btn-default pull-right">Activeer Sessie</a>
+        <a role="button" class="btn btn-default pull-right" asp-area="" asp-controller="Leerkracht" asp-action="ActiveerSessie" asp-route-id="@ViewBag.Sessie.SessionCode">Activeer Sessie</a>
     }
 
     <h3>@ViewBag.Sessie.Name </h3>

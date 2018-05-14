@@ -39,6 +39,7 @@ namespace DotNetG2E.Controllers
 
         }
 
+        [HttpGet]
         public IActionResult Sessie(int id)
         {
 
@@ -56,10 +57,14 @@ namespace DotNetG2E.Controllers
             return View();
         }
 
-        public Task<IActionResult> ActiveerSessie(int id)
-        {
+        //[HttpPost]
+        //public IActionResult ActiveerSessie(int id)
+        //{
+        //    Sessie sessie = _sessieRepository.GetBy(id);
+        //    sessie.IsActive = true;
+        //    _sessieRepository.SaveChanges();
 
-            return null;
-        }
+        //    return RedirectToAction(nameof(Index));
+        //}
     }
 }

@@ -36,6 +36,11 @@ namespace DotNetG2E.Data.Repositories
             
 
         }
+        
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
+        }
 
 
     }
