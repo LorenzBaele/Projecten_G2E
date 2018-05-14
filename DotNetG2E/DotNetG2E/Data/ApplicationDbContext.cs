@@ -22,7 +22,7 @@ namespace DotNetG2E.Data
 		public DbSet<BoB> BoBs { get; set; }
 		public DbSet<Exercise> Exercises { get; set; }
 		public DbSet<Modifier> Modifiers { get; set; }
-
+		public DbSet<Pupil> Pupils { get; set; }
 		public DbSet<Session_Group> Session_Group { get; set; }
 		public DbSet<BoB_Action> BoB_Action { get; set; }
 		public DbSet<BoB_Exercise> BoB_Exercise { get; set; }
@@ -45,6 +45,7 @@ namespace DotNetG2E.Data
 			builder.ApplyConfiguration(new ExerciseConfiguration());
 			builder.ApplyConfiguration(new BoBConfiguration());
 			builder.ApplyConfiguration(new ModifierConfiguration());
+			builder.ApplyConfiguration(new PupilConfiguration());
 			builder.ApplyConfiguration(new BoBActieConfiguration());
 			builder.ApplyConfiguration(new BoBExerciseConfiguration());
 			builder.ApplyConfiguration(new SessionGroupConfiguration());

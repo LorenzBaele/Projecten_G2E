@@ -7,12 +7,12 @@ namespace DotNetG2E.Models.Domain
 {
 	public class BoB
 	{
-		public int BoBId { get; private set; }
-		public String Name { get; private set; }
-		public String Description { get; private set; }
-		public IEnumerable<Actie> Actions { get; private set; }
-		public IEnumerable<AccesCode> AccesCodes { get; private set; }
-		public IEnumerable<Exercise> Exercises { get; private set; }
+		public int BoBId { get; set; }
+		public String Name { get;  set; }
+		public String Description { get; set; }
+		public IEnumerable<Actie> Actions { get;  set; }
+		public IEnumerable<AccesCode> AccesCodes { get;  set; }
+		public IEnumerable<Exercise> Exercises { get; set; }
 		public int SessieCode { get; set; }
 		
 

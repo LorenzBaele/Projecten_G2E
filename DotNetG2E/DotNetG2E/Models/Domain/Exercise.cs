@@ -16,8 +16,8 @@ namespace DotNetG2E.Models.Domain
 		public String Category { get;  set; }
 		public int TimeLimit { get;  set; }
 		public IEnumerable<Modifier> Modifiers { get;  set; }
-		public int BoBId { get; set; }
-		public BoB BoB { get;  set; }
+		//public int BoBId { get; set; }
+		//public BoB BoB { get;  set; }
 
 		public Exercise()
 		{

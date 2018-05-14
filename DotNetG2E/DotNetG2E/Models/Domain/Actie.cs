@@ -7,10 +7,10 @@ namespace DotNetG2E.Models.Domain
 {
     public class Actie
     {
-		public int ActieId { get; private set; }
-		public String Name { get; private set; }
+		public int ActieId { get; set; }
+		public String Name { get;  set; }
 		public int BoBId { get; set; }
-		public BoB BoB { get; private set; }
+		public BoB BoB { get; set; }
 		public Actie()
 		{
 

@@ -7,10 +7,10 @@ namespace DotNetG2E.Models.Domain
 {
 	public class Group
 	{
-		public int GroupId { get; private set; }
+		public int GroupId { get; set; }
 		
-		public String Name { get; private set; }
-		public IEnumerable<Pupil> Pupils { get; private set; }
+		public String Name { get;  set; }
+		public IEnumerable<Pupil> Pupils { get;  set; }
 		//public int SessionCode { get; set; }
 		public Session_Group SessionGroup { get; internal set; }
 

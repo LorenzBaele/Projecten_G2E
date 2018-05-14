@@ -32,7 +32,7 @@ namespace DotNetG2E.Data.Mappers
 			builder.HasMany(t => t.Exercises)
 				.WithOne()
 				.IsRequired()
-				.HasForeignKey(t => t.BoBId)
+				//.HasForeignKey(t => t.BoBId)
 				.OnDelete(DeleteBehavior.Cascade);
 
 			builder.HasMany(t => t.Actions)
