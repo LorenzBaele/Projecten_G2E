@@ -20,7 +20,7 @@ namespace DotNetG2E.Models.SessieViewModels
 		public DateTime DayStarted { get; private set; }
 		public Boolean IsDayEducation { get; private set; }
 		public Boolean HasFeedback { get; private set; }
-		public Group Groups { get; private set; }
+		public IEnumerable<Group> Groups { get; private set; }
 		public int BoxId { get; set; }
 		[Display(Name = "Session Box")]
 		public BoB Box { get; set; }

@@ -12,13 +12,13 @@ namespace DotNetG2E.Models.Domain
 		//private Group _selectedGroup;
 
 
-		public int SessionCode { get; private set; }
-		public String Name { get; private set; }
-		public String Desc { get; private set; }
-		public DateTime DayStarted { get; private set; }
-		public Boolean IsDayEducation { get; private set; }
-		public Boolean HasFeedback { get; private set; }
-		public Group Groups { get; private set; }
+		public int SessionCode { get; set; }
+		public String Name { get;  set; }
+		public String Desc { get; set; }
+		public DateTime DayStarted { get; set; }
+		public Boolean IsDayEducation { get; set; }
+		public Boolean HasFeedback { get; set; }
+		public IEnumerable<Group> Groups { get; set; }
 		//public Group SelectedGroup { get; set; }
 		public Session_Group SessionGroup { get; set; }
 		public BoB Box { get; set; }
@@ -27,10 +27,10 @@ namespace DotNetG2E.Models.Domain
 
 		public Sessie()
 		{
-            //Groups = new List<Group>();
+            Groups = new List<Group>();
 		}
 
-		public Sessie(String name, String desc, DateTime dayStarted, Boolean isDayEducation, Boolean hasFeedback) : this()
+		public Sessie(String name, String desc, DateTime dayStarted, Boolean isDayEducation, Boolean hasFeedback, int sessionCode) : this()
 		{
             this.Name = name;
             this.Desc = desc;
@@ -38,7 +38,7 @@ namespace DotNetG2E.Models.Domain
             this.IsDayEducation = isDayEducation;
             this.HasFeedback = hasFeedback;
             this.IsActive = false;
-            this.SessionCode = 10;
+            this.SessionCode = sessionCode;
         }
 		public Sessie(String name, String desc, DateTime dayStarted, Boolean isDayEducation, Boolean hasFeedback, IEnumerable<Group> groups, BoB bob) : this()
 		{
