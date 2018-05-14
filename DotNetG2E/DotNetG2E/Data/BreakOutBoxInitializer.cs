@@ -143,6 +143,7 @@ namespace DotNetG2E.Data
 				Sessie testS1 = new Sessie() { Name = "Wiskunde", Desc = "Moeilijk", DayStarted = new DateTime(1862, 12, 19), IsActive = true, HasStarted = false, HasFeedback = true, IsDayEducation = true, Box = testB1, Groups = gList1 };
 
 				Sessie testS2 = new Sessie() { Name = "Aardrijkskunde", Desc = "Makkelijk", DayStarted = new DateTime(1892, 10, 16), IsActive = false, HasStarted = false, HasFeedback = false, IsDayEducation = true, Box = testB2, Groups = gList2 };
+                
 
 				ICollection<Sessie> sList = new List<Sessie>();
 				sList.Add(testS1);

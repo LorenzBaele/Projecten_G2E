@@ -10,24 +10,24 @@ using DotNetG2E.Models.SessieViewModels;
 
 namespace DotNetG2E.Controllers
 {
-	[Authorize(Policy = "Leerkracht")]
-	[ServiceFilter(typeof(LeerkrachtFilter))]
-	public class LeerkrachtController : Controller
+    [Authorize(Policy = "Leerkracht")]
+    [ServiceFilter(typeof(LeerkrachtFilter))]
+    public class LeerkrachtController : Controller
     {
-		private readonly ILeerkrachtRepository _leerkrachtRepository;
-		private readonly ISessieRepository _sessieRepository;
+        private readonly ILeerkrachtRepository _leerkrachtRepository;
+        private readonly ISessieRepository _sessieRepository;
 
 
-		public LeerkrachtController(ILeerkrachtRepository leerkrachtRepository, ISessieRepository sessieRepository)
-		{
-			_leerkrachtRepository = leerkrachtRepository;
-			_sessieRepository = sessieRepository;
-		}
+        public LeerkrachtController(ILeerkrachtRepository leerkrachtRepository, ISessieRepository sessieRepository)
+        {
+            _leerkrachtRepository = leerkrachtRepository;
+            _sessieRepository = sessieRepository;
+        }
 
         [HttpGet]
-		public IActionResult Index(Leerkracht leerkracht)
+        public IActionResult Index(Leerkracht leerkracht)
         {
-			ViewData["Message"] = "De overzichtpagina voor leerkrachten";
+            ViewData["Message"] = "De overzichtpagina voor leerkrachten";
 
             //return View();
             //IndexViewModel vm = new IndexViewModel()
@@ -39,26 +39,17 @@ namespace DotNetG2E.Controllers
 
         }
 
-        public IActionResult Select_Sessie(Sessie sessie)
+        public IActionResult Sessie(int id)
         {
-			
-            ViewData["Message"] = "Overzichtspagina van een sessie";
+            ViewBag.Sessie = _sessieRepository.GetBy(id);
 
-            
-            return View("~/Views/Leerkracht/Sessie.cshtml");
+            return View();
         }
 
-		public IActionResult Select_Sessie2(Sessie sessie)
-		{
-
-			ViewData["Message"] = "Overzichtspagina van een sessie";
-
-			return View("~/Views/Leerkracht/Sessie2.cshtml");
-		}
-
-		public IActionResult Sessie(int id)
+        public Task<IActionResult> ActiveerSessie(int id)
         {
-            return Content($"Id is: {id}");
+
+            return null;
         }
     }
 }

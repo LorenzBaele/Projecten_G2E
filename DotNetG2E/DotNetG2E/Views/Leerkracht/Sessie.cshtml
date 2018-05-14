@@ -7,52 +7,82 @@
 <div class="container">
     <br />
     <a role="button" class="btn btn-warning pull-right" asp-area="" asp-controller="Leerkracht" asp-action="Index">terug</a>
-    <a role="button" class="btn btn-default pull-right disabled">Start Sessie</a>
-    <a role="button" class="btn btn-default pull-right">Activeer Sessie</a>
-    <h3>Sessie informatie: </h3>
 
 
+    @if (ViewBag.Sessie.IsActive)
+    {
+        <a role="button" class="btn btn-default pull-right">Start Sessie</a>
 
+    }
+    else
+    {
+        <a role="button" class="btn btn-default pull-right disabled">Start Sessie</a>
+    }
+    @if (ViewBag.Sessie.IsActive)
+    {
+        <a role="button" class="btn btn-default pull-right">Deactiveer Sessie</a>
 
-    <p> Naam: Sessie 1</p>
-   
+    }
+    else
+    {
+        <a role="button" class="btn btn-default pull-right">Activeer Sessie</a>
+    }
 
-    <p> Status: Niet Actief</p> 
+    <h3>@ViewBag.Sessie.Name </h3>
+    <p>Sessiecode: @ViewBag.Sessie.SessionCode</p>
+    @{
+        if (ViewBag.Sessie.IsActive)
+        {
+            <p>Actief</p>
 
+        }
+        else
+        {
+            <p>Niet actief</p>
+
+        }
+    }
 </div>
 
 <div class="container">
-    <h3>Groepen in deze sessie: </h3>
+    <h3>Groepen </h3>
 
     <div class="list-group">
-        @*@foreach (groep in geselecteerde sessie) ;*@
-        <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">Group 1</h4>
-            <ul>
-                <li>student 1</li>
-                <li>student 2</li>
-                <li>student 3</li>
-                <li>student 4</li>
-            </ul>
-        </a>
-        <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">Group 2</h4>
-            <ul>
-                <li>jef</li>
-                <li>bob</li>
-                <li>stef</li>
-                <li>koen</li>
-            </ul>
-        </a>
-        <a href="#" class="list-group-item">
-            <h4 class="list-group-item-heading">Group 3</h4>
-            <ul>
-                <li>Anne</li>
-                <li>Sara</li>
-                <li>Mieke</li>
-                <li>Emma</li>
-            </ul>
-        </a>
+        @{
+
+            if (ViewBag.Sessie.Box == null )
+            {
+                <p>Box is null;</p>
+
+            }
+
+            if (ViewBag.Sessie.Groups.Count > 0)
+            {
+                int i = 1;
+                foreach (var group in ViewBag.Sessie.Groups)
+                {
+                    <a href="group${@i}" class="list-group-item">
+                        <h4 class="list-group-item-heading">Group @i</h4>
+                        <ul>
+                            @{ foreach (var student in group)
+                                {
+                                    <li>@student</li>
+                                }
+                            }
+                        </ul>
+                    </a>
+
+                    i++;
+                }
+
+            }
+            else
+            {
+                <p>Er zijn nog geen groepen in de huidige sessie.</p>
+
+            }
+        }
+
     </div>
 </div>
 

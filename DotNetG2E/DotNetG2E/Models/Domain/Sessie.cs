@@ -18,7 +18,7 @@ namespace DotNetG2E.Models.Domain
 		public DateTime DayStarted { get; set; }
 		public Boolean IsDayEducation { get; set; }
 		public Boolean HasFeedback { get; set; }
-		public IEnumerable<Group> Groups { get; set; }
+		public ICollection<Group> Groups { get; set; }
 		//public Group SelectedGroup { get; set; }
 		public Session_Group SessionGroup { get; set; }
 		public BoB Box { get; set; }
@@ -38,12 +38,19 @@ namespace DotNetG2E.Models.Domain
             this.IsDayEducation = isDayEducation;
             this.HasFeedback = hasFeedback;
             this.IsActive = false;
-            this.SessionCode = sessionCode;
         }
-		public Sessie(String name, String desc, DateTime dayStarted, Boolean isDayEducation, Boolean hasFeedback, IEnumerable<Group> groups, BoB bob) : this()
+		public Sessie(String name, String desc, DateTime dayStarted, Boolean isDayEducation, Boolean hasFeedback, ICollection<Group> groups, BoB bob) : this()
 		{
+            this.Name = name;
+            this.Desc = desc;
+            this.DayStarted = dayStarted;
+            this.IsDayEducation = isDayEducation;
+            this.HasFeedback = hasFeedback;
+            this.IsActive = false;
+            this.Groups = groups;
+            this.Box = bob;
 
-		}
+        }
 
 	}
 }
