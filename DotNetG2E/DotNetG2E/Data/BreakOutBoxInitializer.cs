@@ -72,7 +72,7 @@ namespace DotNetG2E.Data
 				BoB testB3 = new BoB() { BoBId = 3, Name = "Fysica", Description = "Oefeningen", AccesCodes = acList2, Actions = aList2, Exercises = exList2 };
 
 				BoB[] bobs = new BoB[] { testB1, testB2, testB3 };
-				_context.BoBs.Add(testB1);
+				//_context.BoBs.Add(testB1);
 
 				////generate some pupils
 				Pupil p1 = new Pupil() { PupilId = 1, Name = "Wannes" };
