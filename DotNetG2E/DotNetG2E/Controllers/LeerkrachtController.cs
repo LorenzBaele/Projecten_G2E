@@ -58,7 +58,7 @@ namespace DotNetG2E.Controllers
 
 		public IActionResult Sessie(int id)
         {
-            return Content(id.ToString());
+            return Content($"Id is: {id}");
         }
     }
 }
