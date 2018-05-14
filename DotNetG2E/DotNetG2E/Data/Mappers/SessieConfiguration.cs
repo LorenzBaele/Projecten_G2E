@@ -38,7 +38,10 @@ namespace DotNetG2E.Data.Mappers
 
 			//associations
 
-
+			builder.HasMany(t => t.Groups)
+				.WithOne()
+				.IsRequired()
+				.OnDelete(DeleteBehavior.Restrict);
 
 			builder.HasOne(t => t.Box)
 				.WithMany()

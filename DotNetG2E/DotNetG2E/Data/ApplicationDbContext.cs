@@ -19,6 +19,7 @@ namespace DotNetG2E.Data
 
 		public DbSet<Group> Groups { get; set; }
 		public DbSet<Actie> Acties { get; set; }
+		public DbSet<AccesCode> accesCodes { get; set; }
 		public DbSet<BoB> BoBs { get; set; }
 		public DbSet<Exercise> Exercises { get; set; }
 		public DbSet<Modifier> Modifiers { get; set; }
@@ -42,6 +43,7 @@ namespace DotNetG2E.Data
 			builder.ApplyConfiguration(new GroupConfiguration());
 			builder.ApplyConfiguration(new LeerlingConfiguration());
 			builder.ApplyConfiguration(new ActieConfiguration());
+			builder.ApplyConfiguration(new AccesCodeConfiguration());
 			builder.ApplyConfiguration(new ExerciseConfiguration());
 			builder.ApplyConfiguration(new BoBConfiguration());
 			builder.ApplyConfiguration(new ModifierConfiguration());

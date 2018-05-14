@@ -18,17 +18,17 @@ namespace DotNetG2E.Data.Mappers
 			builder.Property(t => t.SessionCode)
 				.IsRequired();
 
-			builder.HasMany(t => t.Sessions)
-				.WithOne()
-				.IsRequired()
-				//.HasForeignKey(t => t.SessionCode)
-				.OnDelete(DeleteBehavior.Restrict);
+			//builder.HasMany(t => t.Sessions)
+			//	.WithOne()
+			//	.IsRequired()
+			//	//.HasForeignKey(t => t.SessionCode)
+			//	.OnDelete(DeleteBehavior.Restrict);
 
-			builder.HasMany(t => t.Groups)
-				.WithOne()
-				.IsRequired()
-				//.HasForeignKey(t => t.GroupId)
-				.OnDelete(DeleteBehavior.Restrict);
+			//builder.HasMany(t => t.Groups)
+			//	.WithOne()
+			//	.IsRequired()
+			//	//.HasForeignKey(t => t.GroupId)
+			//	.OnDelete(DeleteBehavior.Restrict);
 		}
 	}
 }
