@@ -19,12 +19,32 @@ namespace DotNetG2E.Data.Repositories
 		}
 		public IEnumerable<Group> GetAll()
 		{
-			throw new NotImplementedException();
+			return _groups.ToList();
 		}
 
-		public Group getBy(string name)
+		public IEnumerable<Group> getBlockedGroups(bool blocked)
 		{
-			throw new NotImplementedException();
+			return _groups.ToList().FindAll(e => e.Blocked == blocked);
+
+		}
+
+		public Group getById(int groupId)
+		{
+			return _groups.Include(e => e.Name)
+				.Include(e => e.Pupils)
+				.Include(e => e.Selected)
+				.Include(e => e.Blocked)
+				.SingleOrDefault(e => e.GroupId == groupId);
+		}
+
+		public IEnumerable<Group> getSelectedGroups(bool selected)
+		{
+			return _groups.ToList().FindAll(e => e.Selected == selected);
+		}
+
+		public void SaveChanges()
+		{
+			_context.SaveChanges();
 		}
 	}
 }

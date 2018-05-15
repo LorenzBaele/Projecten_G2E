@@ -8,6 +8,9 @@ namespace DotNetG2E.Models.Domain
     interface IGroupRepository
     {
 		IEnumerable<Group> GetAll();
-		Group getBy(String name);
-    }
+		Group getById(int groupId);
+		IEnumerable<Group> getSelectedGroups(bool selected);
+		IEnumerable<Group> getBlockedGroups(bool blocked);
+		void SaveChanges();
+	}
 }
