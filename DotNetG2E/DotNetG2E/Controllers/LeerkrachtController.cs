@@ -44,12 +44,12 @@ namespace DotNetG2E.Controllers
         {
 
             //untill db error is fixed
-            //Pupil p1 = new Pupil() { Name = "Wannes" };
-            //ICollection<Pupil> pList1 = new List<Pupil>();
-            //pList1.Add(p1);
-            //Sessie sessie = _sessieRepository.GetBy(id);
-            //sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1 });
-            //ViewBag.sessie = sessie;
+            Pupil p1 = new Pupil() { Name = "Wannes" };
+            ICollection<Pupil> pList1 = new List<Pupil>();
+            pList1.Add(p1);
+            Sessie sessie = _sessieRepository.GetBy(id);
+            sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1 , Selected = false});
+            ViewBag.sessie = sessie;
             //-----
 
             ViewBag.sessie = _sessieRepository.GetBy(id);
@@ -57,14 +57,35 @@ namespace DotNetG2E.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public IActionResult ActiveerSessie(int id)
-        //{
-        //    Sessie sessie = _sessieRepository.GetBy(id);
-        //    sessie.IsActive = true;
-        //    _sessieRepository.SaveChanges();
+        
+        public IActionResult ActiveerSessie(int id)
+        {
+            Sessie sessie = _sessieRepository.GetBy(id);
+            sessie.IsActive = true;
+            Pupil p1 = new Pupil() { Name = "Wannes" };
+            ICollection<Pupil> pList1 = new List<Pupil>();
+            pList1.Add(p1);
+            sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1, Selected = false });
+            ViewBag.sessie = sessie;
+            //-----
+            _sessieRepository.SaveChanges();
+            ViewBag.sessie = _sessieRepository.GetBy(id);
+            return View("~/Views/Leerkracht/Sessie.cshtml");
+        }
 
-        //    return RedirectToAction(nameof(Index));
-        //}
+        public IActionResult DeactiveerSessie(int id)
+        {
+            Sessie sessie = _sessieRepository.GetBy(id);
+            sessie.IsActive = false;
+            Pupil p1 = new Pupil() { Name = "Wannes" };
+            ICollection<Pupil> pList1 = new List<Pupil>();
+            pList1.Add(p1);
+            sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1, Selected = false });
+            ViewBag.sessie = sessie;
+            //-----
+            _sessieRepository.SaveChanges();
+            ViewBag.sessie = _sessieRepository.GetBy(id);
+            return View("~/Views/Leerkracht/Sessie.cshtml");
+        }
     }
 }
