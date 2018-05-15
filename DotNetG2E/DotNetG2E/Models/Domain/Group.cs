@@ -11,7 +11,9 @@ namespace DotNetG2E.Models.Domain
 		
 		public String Name { get;  set; }
 		public IEnumerable<Pupil> Pupils { get;  set; }
-		//public int SessionCode { get; set; }
+		public Boolean Selected { get; set; }
+		public Boolean Blocked { get; set; }
+										   //public int SessionCode { get; set; }
 		public Session_Group SessionGroup { get; internal set; }
 
 		public Group()

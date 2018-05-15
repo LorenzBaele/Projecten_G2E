@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 
 namespace DotNetG2E.Models.Domain
 {
-    public interface ISessieRepository
+    public interface IProgressRepository
     {
-		IEnumerable<Sessie> GetAll();
-        Sessie GetBy(int sessionCode);
-        void SaveChanges();
-
-    }
+		IEnumerable<Progress> GetAll();
+		Progress GetBy(int groupId);
+		void SaveChanges();
+	}
 }

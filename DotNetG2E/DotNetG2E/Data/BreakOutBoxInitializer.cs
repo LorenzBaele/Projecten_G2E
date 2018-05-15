@@ -18,7 +18,7 @@ namespace DotNetG2E.Data
 			_context = context;
 			_userManager = userManager;
 		}
-
+		//in between tables worden momenteel niet gebruikt.
 		public async Task InitializeData()
 		{
 			_context.Database.EnsureDeleted();
@@ -82,6 +82,7 @@ namespace DotNetG2E.Data
 				AccesCode testAc2 = new AccesCode() { Code = 2 };
 				AccesCode testAc3 = new AccesCode() { Code = 3 };
 				AccesCode testAc4 = new AccesCode() { Code = 4 };
+				AccesCode testAc5 = new AccesCode() { Code = 5 };
 
 				ICollection<AccesCode> acList1 = new List<AccesCode>();
 				acList1.Add(testAc1);
@@ -91,7 +92,7 @@ namespace DotNetG2E.Data
 				acList2.Add(testAc3);
 				ICollection<AccesCode> acList3 = new List<AccesCode>();
 				acList3.Add(testAc4);
-				acList3.Add(testAc3);
+				acList3.Add(testAc5);
 
 				////generate some bobs
 				BoB testB1 = new BoB() { Name = "Biologie", Description = "Inhoud van de cel", AccesCodes = acList1, Actions = aList1, Exercises = exList1 };
@@ -108,6 +109,9 @@ namespace DotNetG2E.Data
 				Pupil p4 = new Pupil() { Name = "Jef" };
 				Pupil p5 = new Pupil() { Name = "Bob" };
 				Pupil p6 = new Pupil() { Name = "Jozef" };
+				Pupil p7 = new Pupil() { Name = "Emma" };
+				Pupil p8 = new Pupil() { Name = "Maaike" };
+				Pupil p9 = new Pupil() { Name = "Merel" };
 
 				ICollection<Pupil> pList1 = new List<Pupil>();
 				pList1.Add(p1);
@@ -120,14 +124,14 @@ namespace DotNetG2E.Data
 				pList2.Add(p6);
 
 				ICollection<Pupil> pList3 = new List<Pupil>();
-				pList3.Add(p6);
-				pList3.Add(p4);
-				pList3.Add(p1);
+				pList3.Add(p7);
+				pList3.Add(p8);
+				pList3.Add(p9);
 
 				////generate some groups
-				Group testG1 = new Group() {  Name = "Groep E1", Pupils = pList1 };
-				Group testG2 = new Group() {  Name = "Groep E2", Pupils = pList2 };
-				Group testG3 = new Group() {  Name = "Groep E2", Pupils = pList3 };
+				Group testG1 = new Group() {  Name = "Groep E1", Pupils = pList1, Selected = false, Blocked = false };
+				Group testG2 = new Group() {  Name = "Groep E2", Pupils = pList2, Selected = false, Blocked = false };
+				Group testG3 = new Group() {  Name = "Groep E2", Pupils = pList3, Selected = false, Blocked = false };
 				//Group[] groups = new Group[] { testG1, testG2 };
 				//Group[] groups2 = new Group[] {  testG3 };
 

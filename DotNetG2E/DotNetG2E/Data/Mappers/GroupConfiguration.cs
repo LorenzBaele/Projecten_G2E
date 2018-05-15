@@ -20,6 +20,12 @@ namespace DotNetG2E.Data.Mappers
 				.HasMaxLength(255);
 			//builder.Property(t => t.Pupils)
 			//	.IsRequired();
+			builder.Property(t => t.Selected)
+				.IsRequired();
+			builder.Property(t => t.Blocked)
+				.IsRequired();
+				
+			
 
 
 			builder.HasMany(t => t.Pupils)

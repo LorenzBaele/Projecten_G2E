@@ -27,6 +27,7 @@ namespace DotNetG2E.Data
 		public DbSet<Session_Group> Session_Group { get; set; }
 		public DbSet<BoB_Action> BoB_Action { get; set; }
 		public DbSet<BoB_Exercise> BoB_Exercise { get; set; }
+		public DbSet<Progress> Progress { get;set; }
 
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
 			: base(options)
@@ -51,6 +52,7 @@ namespace DotNetG2E.Data
 			builder.ApplyConfiguration(new BoBActieConfiguration());
 			builder.ApplyConfiguration(new BoBExerciseConfiguration());
 			builder.ApplyConfiguration(new SessionGroupConfiguration());
+			builder.ApplyConfiguration(new ProgressConfiguration());
 
 			// Customize the ASP.NET Identity model and override the defaults if needed.
 			// For example, you can rename the ASP.NET Identity table names and more.
