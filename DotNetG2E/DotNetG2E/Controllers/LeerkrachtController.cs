@@ -44,15 +44,15 @@ namespace DotNetG2E.Controllers
         {
 
             //untill db error is fixed
-            Pupil p1 = new Pupil() { Name = "Wannes" };
-            ICollection<Pupil> pList1 = new List<Pupil>();
-            pList1.Add(p1);
-            Sessie sessie = _sessieRepository.GetBy(id);
-            sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1 });
-            ViewBag.Sessie = sessie;
+            //Pupil p1 = new Pupil() { Name = "Wannes" };
+            //ICollection<Pupil> pList1 = new List<Pupil>();
+            //pList1.Add(p1);
+            //Sessie sessie = _sessieRepository.GetBy(id);
+            //sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1 });
+            //ViewBag.sessie = sessie;
             //-----
 
-            //ViewBag.Sessie = _sessieRepository.GetBy(id);
+            ViewBag.sessie = _sessieRepository.GetBy(id);
 
             return View();
         }

@@ -32,9 +32,6 @@ namespace DotNetG2E.Data.Repositories
         public Sessie GetBy(int sessionCode)
         {
             return _sessies.SingleOrDefault(s => s.SessionCode == sessionCode);
-
-            
-
         }
         
         public void SaveChanges()

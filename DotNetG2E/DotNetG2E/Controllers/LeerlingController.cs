@@ -2,13 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DotNetG2E.Models.Domain;
 using Microsoft.AspNetCore.Mvc;
+using DotNetG2E.Data.Repositories;
 
 namespace DotNetG2E.Controllers
 {
     public class LeerlingController : Controller
     {
-        //private readonly ISessieRepository _sessieRepository;
+        private readonly ISessieRepository _sessieRepository;
+
+        public LeerlingController(ISessieRepository sessieRepository)
+        {
+            _sessieRepository = sessieRepository;
+        }
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -20,7 +28,7 @@ namespace DotNetG2E.Controllers
         [HttpPost]
         public IActionResult Index(string leerlingCode)
         {
-            //Sessie sessie = _sessieRepository.getBy(int.TryParse(leerlingCode));
+            Sessie sessie = _sessieRepository.GetBy(Convert.ToInt16(leerlingCode));
             return View("Selection");
         }
 
