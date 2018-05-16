@@ -1,6 +1,14 @@
 ﻿
 @{
+    var max = 4;
     ViewData["Title"] = "Sessie";
+    foreach (var group in ViewBag.Sessie.Groups)
+    {
+        if (group.Pupils.Count > max)
+        {
+            max = group.Pupils.Count;
+        }
+    }
 }
 
 @{
@@ -91,13 +99,13 @@
 
 
 <div class="container">
-    <div class="row" >
-        <section class="content" >
-            
-            <div class="col-md-4 col-md-offset-1" style="position: absolute; left:18%;" >
+    <div class="row">
+        <section class="content">
+
+            <div class="col-md-4 col-md-offset-1" style="position: absolute; left:18%;">
                 <div>
-                    <h1 >Actieve groepen</h1>
-                    <div >
+                    <h1>Actieve groepen</h1>
+                    <div>
 
                         <div>
 
@@ -124,12 +132,17 @@
                                                         {
                                                             <li>@student.Name</li>
                                                         }
+                                                        for (var e = group.Pupils.Count; e < max; e++)
+                                                        {
+                                                            <br />
+                                                        }
+
                                                     }
                                                 </ul>
                                             </a>
 
                                         }
-                                        
+
                                         i++;
                                     }
 
@@ -171,12 +184,17 @@
                                             {
                                                 <li>@student.Name</li>
                                             }
+                                            for (var e = group.Pupils.Count; e < max; e++)
+                                            {
+                                                <br />
+                                            }
+
                                         }
                                     </ul>
                                 </a>
 
                             }
-                          
+
                             i++;
                         }
 
