@@ -9,6 +9,14 @@
         }
     }
 }
+
+@if (ViewBag.GroupsSelected == true)
+{
+    <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Alert!</strong> Je kan de sessie enkel deactiveren als alle groepen zijn gedeactiveerd. 
+    </div>
+}
 <head>
     <meta http-equiv="refresh" content="4">
 </head>

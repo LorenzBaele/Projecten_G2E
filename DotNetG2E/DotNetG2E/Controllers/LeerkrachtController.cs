@@ -99,11 +99,26 @@ namespace DotNetG2E.Controllers
         public IActionResult DeactiveerSessie(int id)
         {
             Sessie sessie = _sessieRepository.GetBy(id);
-            sessie.IsActive = false;         
-            ViewBag.sessie = sessie;
-            _sessieRepository.SaveChanges();
-            ViewBag.sessie = _sessieRepository.GetBy(id);
-            return View("~/Views/Leerkracht/Sessie.cshtml");
+            Boolean allGroupsUnselected = true;
+            foreach(var group in sessie.Groups)
+            {
+                if (group.Selected)
+                {
+                    allGroupsUnselected = false;
+                }
+            }
+            if (allGroupsUnselected)
+            {
+                sessie.IsActive = false;
+                _sessieRepository.SaveChanges();
+            } else
+            {
+                ViewBag.GroupsSelected = true;
+            }
+
+            ViewBag.Sessie = sessie;
+           
+            return View("Sessie");
         }
 
         public IActionResult DeactiveerGroep(int id, int sessieId)
