@@ -33,6 +33,19 @@ namespace DotNetG2E.Data.Repositories
         {
             return _sessies.SingleOrDefault(s => s.SessionCode == sessionCode);
         }
+
+        public IEnumerable<Sessie> GetByFilter(String filter)
+        {
+            List<Sessie> filteredSessions = new List<Sessie>();
+            foreach(Sessie s in _sessies)
+            {
+                if (s.Name.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    filteredSessions.Add(s);
+                }
+            }
+            return filteredSessions;
+        }
         
         public void SaveChanges()
         {

@@ -38,6 +38,14 @@ namespace DotNetG2E.Controllers
             return View(_sessieRepository.GetAll());
 
         }
+        [HttpPost]
+        public IActionResult Index(String sessionSearch)
+        {
+            ViewData["Message"] = "De overzichtpagina voor leerkrachten";
+
+            return View(_sessieRepository.GetByFilter(sessionSearch));
+
+        }
 
         [HttpGet]
         public IActionResult Sessie(int id)
