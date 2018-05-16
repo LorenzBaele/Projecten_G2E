@@ -85,29 +85,102 @@
         <a role="button" class="btn btn-default pull-right" asp-controller="leerkracht" asp-action="ActiveerSessie" asp-route-id="@ViewBag.Sessie.SessionCode">Activeer Sessie</a>
     }
 
-    <h3>@ViewBag.Sessie.Name </h3>
-    <p>Sessiecode: @ViewBag.Sessie.SessionCode</p>
-    @{
-        if (ViewBag.Sessie.IsActive)
-        {
-            <p>Actief</p>
-
-        }
-        else
-        {
-            <p>Niet actief</p>
-
-        }
-    }
 </div>
 
 <div class="container">
     <div class="row">
         <section class="content">
+            <h2>Overzicht Sessie: @ViewBag.Sessie.Name </h2>
+            <div class="panel panel-default">
+                <div class="panel-body">
 
+                    <p><b>Beschrijving:</b> @ViewBag.Sessie.Desc</p>
+                    <p><b>Sessiecode:</b> @ViewBag.Sessie.SessionCode</p>
+                    @{
+                        if (ViewBag.Sessie.IsActive)
+                        {
+                    <p><b>Status:</b> Actief</p>
+
+                        }
+                        else
+                        {
+            <p><b>Status:</b> Niet actief</p>
+
+}
+                    }
+                    <p><b>Datum:</b> @ViewBag.Sessie.DayStarted</p>
+                    @{
+                        if (ViewBag.Sessie.HasFeedback)
+                        {
+                    <p><b>Feedback Type:</b> De leerling krijgt feedback indien hij een vraag niet kan oplossen.</p>
+
+                        }
+                        else
+                        {
+            <p><b>Feedback Type:</b> De vraag wordt geblokkeerd na drie foute pogingen.</p>
+
+}
+                    }
+
+                    @{
+                        if (ViewBag.Sessie.IsDayEducation)
+                        {
+                    <p><b>Type Sessie:</b> Deze sessie is bedoelt voor studenten die normaal dag onderwijs volgen.</p>
+
+                        }
+                        else
+                        {
+            <p><b>Type Sessie:</b> Deze sessie is bedoelt voor studenten die afstandsonderwijs volgen.</p>
+
+}
+                    }
+                </div>
+            </div>
+            <h2>Break Out Box: @ViewBag.Sessie.Box.Name</h2>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p><b>Beschrijving:</b> @ViewBag.Sessie.Box.Description</p>
+                    @{ foreach (var exercise in ViewBag.Sessie.Box.Exercises)
+        {
+                <p><b>Oefening @exercise.ExerciseId:</b> @exercise.Name</p>
+                <ul>
+                    <li><p><b>Categorie: </b>@exercise.Category</p></li>
+                    <li><p><b>Taak: </b><a href="~/images/@exercise.Task">@exercise.Task</a></p></li>
+                    <li><p><b>Feedback: </b><a href="~/images/@exercise.Task">@exercise.Feedback</a></p></li>
+                    <li><p><b>Doel: </b>@exercise.Goal</p></li>
+                    <li><p><b>Resultaat: </b>@exercise.Result</p></li>
+                    <li><p><b>Tijdslimiet: </b>@exercise.TimeLimit seconden </p></li>
+                </ul>
+
+}
+                    }
+
+                    @{ foreach (var action in ViewBag.Sessie.Box.Actions)
+        {
+                <p><b>Actie @action.ActieId:</b> @action.Name</p>
+
+        }
+                    }
+                    <b>Access Codes: </b>
+                    @{ foreach (var accesscode in ViewBag.Sessie.Box.AccesCodes)
+        {
+               @accesscode.Code
+
+        }
+                    }
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <section class="content">
+            <h2>Groepen:</h2>
             <div class="col-md-4 col-md-offset-1" style="position: absolute; left:18%;">
                 <div>
-                    <h1>Actieve groepen</h1>
+                    <h3>Actieve groepen</h3>
                     <div>
 
                         <div>
@@ -171,7 +244,7 @@
                 </div>
             </div>
             <div class="col-md-4 col-md-offset-7 ">
-                <h1 class="text-center">Niet actieve groepen</h1>
+                <h3 class="text-center">Niet actieve groepen</h3>
                 @{
 
                     if (ViewBag.Sessie.Box == null && ViewBag.Sessie.Groups.Count == 0)
