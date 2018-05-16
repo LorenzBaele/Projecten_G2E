@@ -5,10 +5,14 @@
 
 <link href="@Url.Content("~/css/site.css")" rel="stylesheet" type="text/css" />
 @*@Url.Content("~/Content/Site.css")*@
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-info pull-left">
+    <span class="glyphicon glyphicon-home"></span> Home
+</a>
 <div class="container">
     <div class="row">
         <section class="content">
-            <h1>Alle Sessies</h1>
+            <h1 class="text-center">Alle Sessies</h1>
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">

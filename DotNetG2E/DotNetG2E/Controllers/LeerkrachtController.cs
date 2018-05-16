@@ -44,11 +44,15 @@ namespace DotNetG2E.Controllers
         {
 
             //untill db error is fixed
+            Sessie sessie = _sessieRepository.GetBy(id);
             Pupil p1 = new Pupil() { Name = "Wannes" };
             ICollection<Pupil> pList1 = new List<Pupil>();
             pList1.Add(p1);
-            Sessie sessie = _sessieRepository.GetBy(id);
-            sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1 , Selected = false});
+            Pupil p2 = new Pupil() { Name = "Arne" };
+            ICollection<Pupil> pList2 = new List<Pupil>();
+            pList2.Add(p2);
+            sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1, Selected = false });
+            sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList2, Selected = true });
             ViewBag.sessie = sessie;
             //-----
 
@@ -65,7 +69,12 @@ namespace DotNetG2E.Controllers
             Pupil p1 = new Pupil() { Name = "Wannes" };
             ICollection<Pupil> pList1 = new List<Pupil>();
             pList1.Add(p1);
+            Pupil p2 = new Pupil() { Name = "Arne" };
+            ICollection<Pupil> pList2 = new List<Pupil>();
+            pList2.Add(p2);
             sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1, Selected = false });
+            sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList2, Selected = true });
+
             ViewBag.sessie = sessie;
             //-----
             _sessieRepository.SaveChanges();
@@ -80,7 +89,11 @@ namespace DotNetG2E.Controllers
             Pupil p1 = new Pupil() { Name = "Wannes" };
             ICollection<Pupil> pList1 = new List<Pupil>();
             pList1.Add(p1);
+            Pupil p2 = new Pupil() { Name = "Arne" };
+            ICollection<Pupil> pList2 = new List<Pupil>();
+            pList2.Add(p2);
             sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1, Selected = false });
+            sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList2, Selected = true });
             ViewBag.sessie = sessie;
             //-----
             _sessieRepository.SaveChanges();
