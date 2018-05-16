@@ -9,6 +9,7 @@ namespace DotNetG2E.Models.Domain
 	{
 		public int Id { get; set; }
 		public int Modifierint { get; set; }
+		public int ExerciseId { get; set; }
 
 		public Modifier()
 		{
