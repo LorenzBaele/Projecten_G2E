@@ -38,14 +38,7 @@ namespace DotNetG2E.Controllers
             {
                 if (sessie.IsActive)
                 {
-                    Pupil p1 = new Pupil() { Name = "Wannes" };
-                    ICollection<Pupil> pList1 = new List<Pupil>();
-                    pList1.Add(p1);
-                    Pupil p2 = new Pupil() { Name = "Arne" };
-                    ICollection<Pupil> pList2 = new List<Pupil>();
-                    pList2.Add(p2);
-                    sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1, Selected = false, GroupId = 1 });
-                    sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList2, Selected = true, GroupId = 2 });
+                  
                     ViewBag.Sessie = sessie;
                     return View("Selection");
                 }
@@ -81,6 +74,8 @@ namespace DotNetG2E.Controllers
         {
             return View("Exercise");
         }
+
+       
 
     }
 }
