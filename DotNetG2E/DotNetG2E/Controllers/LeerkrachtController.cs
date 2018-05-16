@@ -14,12 +14,16 @@ namespace DotNetG2E.Controllers
     [ServiceFilter(typeof(LeerkrachtFilter))]
     public class LeerkrachtController : Controller
     {
+        private string filter;
+        private int filterActive;
         private readonly ILeerkrachtRepository _leerkrachtRepository;
         private readonly ISessieRepository _sessieRepository;
 
 
         public LeerkrachtController(ILeerkrachtRepository leerkrachtRepository, ISessieRepository sessieRepository)
         {
+            filter = "";
+            filterActive = 2;
             _leerkrachtRepository = leerkrachtRepository;
             _sessieRepository = sessieRepository;
         }
@@ -35,7 +39,26 @@ namespace DotNetG2E.Controllers
             //	Sessions = leerkracht.GetSessies().Select(t=> new SessieViewModel(t))
             //};
 
-            return View(_sessieRepository.GetAll());
+            if (filterActive == 1)
+            {
+                return View(_sessieRepository.GetByFilter(filter));
+            }
+            else if (filterActive == 2)
+            {
+                return View(_sessieRepository.GetByFilterActive(filter));
+            }
+            else
+            {
+                return View(_sessieRepository.GetByFilterNotActive(filter));
+
+            }
+
+        }
+        [HttpPost]
+        public IActionResult Index(int id)
+        {
+            filterActive = id;
+            return View();
 
         }
         [HttpPost]
@@ -43,7 +66,10 @@ namespace DotNetG2E.Controllers
         {
             ViewData["Message"] = "De overzichtpagina voor leerkrachten";
 
-            return View(_sessieRepository.GetByFilter(sessionSearch));
+            filter = sessionSearch;
+
+            return View();
+
 
         }
 

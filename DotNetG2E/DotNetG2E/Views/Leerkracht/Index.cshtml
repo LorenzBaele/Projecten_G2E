@@ -27,9 +27,12 @@
                             <div class="pull-right">
 
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-success ">Actief</button>
+                                    <a role="button" class="btn btn-success" asp-area="" asp-controller="Leerkracht" asp-action="Index" asp-route-id="2">Actief</a>
+                                    <a role="button" class="btn btn-warning" asp-area="" asp-controller="Leerkracht" asp-action="Index" asp-route-id="3">Niet Actief</a>
+                                    <a role="button" class="btn btn-default" asp-area="" asp-controller="Leerkracht" asp-action="Index" asp-route-id="1">Alles</a>
+                                    @*<button type="button" class="btn btn-success ">Actief</button>
                                     <button type="button" class="btn btn-warning ">Niet Actief</button>
-                                    <button type="button" class="btn btn-default ">alles</button>
+                                    <button type="button" class="btn btn-default ">alles</button>*@
 
                                 </div>
                             </div>

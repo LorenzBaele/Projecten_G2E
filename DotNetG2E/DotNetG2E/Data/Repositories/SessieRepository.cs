@@ -23,6 +23,20 @@ namespace DotNetG2E.Data.Repositories
             
 
         }
+
+        public IEnumerable<Sessie> GetActive()
+        {
+            List<Sessie> filteredSessions = new List<Sessie>();
+            foreach (Sessie s in _sessies)
+            {
+                if (s.IsActive)
+                {
+                    filteredSessions.Add(s);
+                }
+            }
+            return filteredSessions;
+        }
+
         public IEnumerable<Sessie> GetAll()
         {
             return _sessies.ToList();
@@ -46,7 +60,46 @@ namespace DotNetG2E.Data.Repositories
             }
             return filteredSessions;
         }
-        
+
+        public IEnumerable<Sessie> GetByFilterActive(string filter)
+        {
+            List<Sessie> filteredSessions = new List<Sessie>();
+            foreach (Sessie s in _sessies)
+            {
+                if (s.Name.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 && s.IsActive)
+                {
+                    filteredSessions.Add(s);
+                }
+            }
+            return filteredSessions;
+        }
+
+        public IEnumerable<Sessie> GetByFilterNotActive(string filter)
+        {
+            List<Sessie> filteredSessions = new List<Sessie>();
+            foreach (Sessie s in _sessies)
+            {
+                if (s.Name.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 && !s.IsActive)
+                {
+                    filteredSessions.Add(s);
+                }
+            }
+            return filteredSessions;
+        }
+
+        public IEnumerable<Sessie> GetNotActive()
+        {
+            List<Sessie> filteredSessions = new List<Sessie>();
+            foreach (Sessie s in _sessies)
+            {
+                if (!s.IsActive)
+                {
+                    filteredSessions.Add(s);
+                }
+            }
+            return filteredSessions;
+        }
+
         public void SaveChanges()
         {
             _context.SaveChanges();
