@@ -52,7 +52,9 @@ namespace DotNetG2E.Controllers
             //ViewBag.sessie = sessie;
             //-----
 
-            ViewBag.sessie = _sessieRepository.GetBy(id);
+            ViewBag.Sessie = _sessieRepository.GetBy(id);
+            ViewBag.Groups = _sessieRepository.GetBy(id).Groups;
+
 
             return View();
         }
