@@ -3,29 +3,70 @@
     ViewData["Title"] = "Sessie";
 }
 
+@{
+    var allSelected = true;
+    foreach (var group in ViewBag.Sessie.Groups)
+    {
+        if (!group.Selected)
+        {
+            allSelected = false;
+
+        }
+
+    }
+    if (!ViewBag.Sessie.IsActive)
+    {
+        <div class="alert alert-info fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Info!</strong> Om een sessie te starten moet de sessie geactiveerd worden.
+        </div>
+    }
+    else if (!allSelected && ViewBag.Sessie.IsActive)
+    {
+        <div class="alert alert-info fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Info!</strong> Om een sessie te starten moeten alle groepen geselecteerd zijn.
+        </div>
+
+    }
+
+
+}
 
 <div class="container">
     <br />
     <a role="button" class="btn btn-warning pull-right" asp-area="" asp-controller="Leerkracht" asp-action="Index">terug</a>
 
 
+    @{
+
+
+        if (allSelected && ViewBag.Sessie.IsActive)
+        {
+            <a role="button" class="btn btn-default pull-right">Start Sessie</a>
+
+        }
+        else if (ViewBag.Sessie.IsActive)
+        {
+            <a class="btn btn-default pull-right disabled" role="button">Start Sessie</a>
+
+
+        }
+        else
+        {
+            <a role="button" class="btn btn-default pull-right disabled">Start Sessie</a>
+
+        }
+    }
+
     @if (ViewBag.Sessie.IsActive)
     {
-        <a role="button" class="btn btn-default pull-right">Start Sessie</a>
+        <a role="button" class="btn btn-default pull-right" asp-controller="leerkracht" asp-action="DeactiveerSessie" asp-route-id="@ViewBag.Sessie.SessionCode">Deactiveer Sessie</a>
 
     }
     else
     {
-        <a role="button" class="btn btn-default pull-right disabled">Start Sessie</a>
-    }
-    @if (ViewBag.Sessie.IsActive)
-    {
-        <a role="button" class="btn btn-default pull-right">Deactiveer Sessie</a>
-
-    }
-    else
-    {
-        <a role="button" class="btn btn-default pull-right" asp-area="" asp-controller="Leerkracht" asp-action="ActiveerSessie" asp-route-id="@ViewBag.Sessie.SessionCode">Activeer Sessie</a>
+        <a role="button" class="btn btn-default pull-right" asp-controller="leerkracht" asp-action="ActiveerSessie" asp-route-id="@ViewBag.Sessie.SessionCode">Activeer Sessie</a>
     }
 
     <h3>@ViewBag.Sessie.Name </h3>

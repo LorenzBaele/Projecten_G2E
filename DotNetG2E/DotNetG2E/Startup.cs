@@ -79,7 +79,7 @@ namespace DotNetG2E
             {
                 routes.MapRoute(
                     name: "LeerkrachtIndex",
-                    template: "LeerkrachtIndex/{name?}",
+                    template: "LeerkrachtIndex/{id?}",
                     defaults: new { controller = "Sessie", action = "Search" });
                 routes.MapRoute(
                     name: "default",
