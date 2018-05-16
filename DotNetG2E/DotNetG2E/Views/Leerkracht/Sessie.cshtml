@@ -9,6 +9,9 @@
         }
     }
 }
+<head>
+    <meta http-equiv="refresh" content="4">
+</head>
 
 @{
     var allSelected = true;
@@ -117,7 +120,7 @@
                                     {
                                         if (group.Selected)
                                         {
-                                            <a href="#" class="list-group-item list-group-item-success col-md-7">
+                                            <div class="list-group-item list-group-item-success col-md-7">
                                                 <h4 class="list-group-item-heading">@group.Name</h4>
 
                                                 <div class="progress">
@@ -126,7 +129,7 @@
                                                         0% Complete
                                                     </div>
                                                 </div>
-                                                
+
                                                 <ul>
                                                     @{ foreach (var student in group.Pupils)
                                                         {
@@ -139,7 +142,9 @@
 
                                                     }
                                                 </ul>
-                                            </a>
+                                                <a role="button" class="btn btn-default" asp-area="" asp-controller="Leerkracht" asp-action="DeactiveerGroep" asp-route-id="@group.GroupId" asp-route-sessieId="@ViewBag.Sessie.SessionCode">Deactiveer deze groep</a>
+
+                                            </div>
 
                                         }
 
@@ -195,7 +200,7 @@
                                             }
 
                                         }
-                                        
+
                                     </ul>
                                 </a>
 

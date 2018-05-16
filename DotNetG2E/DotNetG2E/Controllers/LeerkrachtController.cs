@@ -18,6 +18,8 @@ namespace DotNetG2E.Controllers
         private int filterActive;
         private readonly ILeerkrachtRepository _leerkrachtRepository;
         private readonly ISessieRepository _sessieRepository;
+        //test
+        private Sessie _selectedSession;
 
 
         public LeerkrachtController(ILeerkrachtRepository leerkrachtRepository, ISessieRepository sessieRepository)
@@ -76,20 +78,7 @@ namespace DotNetG2E.Controllers
         [HttpGet]
         public IActionResult Sessie(int id)
         {
-
-            //untill db error is fixed
-            //Sessie sessie = _sessieRepository.GetBy(id);
-            //Pupil p1 = new Pupil() { Name = "Wannes" };
-            //ICollection<Pupil> pList1 = new List<Pupil>();
-            //pList1.Add(p1);
-            //Pupil p2 = new Pupil() { Name = "Arne" };
-            //ICollection<Pupil> pList2 = new List<Pupil>();
-            //pList2.Add(p2);
-            //sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1, Selected = false });
-            //sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList2, Selected = true });
-            //ViewBag.sessie = sessie;
-            //-----
-
+            _selectedSession = _sessieRepository.GetBy(id);
             ViewBag.Sessie = _sessieRepository.GetBy(id);
             ViewBag.Groups = _sessieRepository.GetBy(id).Groups;
 
@@ -101,18 +90,7 @@ namespace DotNetG2E.Controllers
         public IActionResult ActiveerSessie(int id)
         {
             Sessie sessie = _sessieRepository.GetBy(id);
-            sessie.IsActive = true;
-            //Pupil p1 = new Pupil() { Name = "Wannes" };
-            //ICollection<Pupil> pList1 = new List<Pupil>();
-            //pList1.Add(p1);
-            //Pupil p2 = new Pupil() { Name = "Arne" };
-            //ICollection<Pupil> pList2 = new List<Pupil>();
-            //pList2.Add(p2);
-            //sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1, Selected = false });
-            //sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList2, Selected = true });
-
             ViewBag.sessie = sessie;
-            //-----
             _sessieRepository.SaveChanges();
             ViewBag.sessie = _sessieRepository.GetBy(id);
             return View("~/Views/Leerkracht/Sessie.cshtml");
@@ -121,20 +99,23 @@ namespace DotNetG2E.Controllers
         public IActionResult DeactiveerSessie(int id)
         {
             Sessie sessie = _sessieRepository.GetBy(id);
-            sessie.IsActive = false;
-            //Pupil p1 = new Pupil() { Name = "Wannes" };
-            //ICollection<Pupil> pList1 = new List<Pupil>();
-            //pList1.Add(p1);
-            //Pupil p2 = new Pupil() { Name = "Arne" };
-            //ICollection<Pupil> pList2 = new List<Pupil>();
-            //pList2.Add(p2);
-            //sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList1, Selected = false });
-            //sessie.Groups.Add(new Group() { Name = "2B", Pupils = pList2, Selected = true });
+            sessie.IsActive = false;         
             ViewBag.sessie = sessie;
-            //-----
             _sessieRepository.SaveChanges();
             ViewBag.sessie = _sessieRepository.GetBy(id);
             return View("~/Views/Leerkracht/Sessie.cshtml");
+        }
+
+        public IActionResult DeactiveerGroep(int id, int sessieId)
+        {
+            Sessie sessie = _sessieRepository.GetBy(sessieId);
+            Group group = sessie.Groups.ToList().Find(e => e.GroupId == id);
+            group.Selected = false;
+            _sessieRepository.SaveChanges();
+            ViewBag.sessie = sessie;
+
+            return View("Sessie");
+            
         }
     }
 }
