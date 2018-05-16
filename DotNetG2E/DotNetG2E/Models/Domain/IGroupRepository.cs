@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DotNetG2E.Models.Domain
 {
-    interface IGroupRepository
+    public interface IGroupRepository
     {
 		IEnumerable<Group> GetAll();
 		Group getById(int groupId);

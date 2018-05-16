@@ -23,6 +23,20 @@ namespace DotNetG2E.Data.Repositories
             
 
         }
+
+        public IEnumerable<Sessie> GetActive()
+        {
+            List<Sessie> filteredSessions = new List<Sessie>();
+            foreach (Sessie s in _sessies)
+            {
+                if (s.IsActive)
+                {
+                    filteredSessions.Add(s);
+                }
+            }
+            return filteredSessions;
+        }
+
         public IEnumerable<Sessie> GetAll()
         {
             return _sessies.ToList();
@@ -31,10 +45,95 @@ namespace DotNetG2E.Data.Repositories
 
         public Sessie GetBy(int sessionCode)
         {
-            return _sessies.SingleOrDefault(s => s.SessionCode == sessionCode);
+			Sessie sessie = _sessies
+				.Include(e => e.Box)
+					.ThenInclude(e => e.Exercises)
+						.ThenInclude(e => e.Modifiers)
+				.Include(e => e.Box)
+					.ThenInclude(e => e.Actions)
+				.Include(e => e.Box)
+					.ThenInclude(e => e.AccesCodes)
+				.Include(e => e.Groups)
+					.ThenInclude(e => e.Pupils)
+				.SingleOrDefault(e => e.SessionCode == sessionCode);
+
+			return sessie;
+
         }
-        
-        public void SaveChanges()
+
+        public IEnumerable<Sessie> GetByFilter(String filter)
+        {
+            List<Sessie> filteredSessions = new List<Sessie>();
+            foreach(Sessie s in _sessies)
+            {
+                if (s.Name.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    filteredSessions.Add(s);
+                }
+            }
+            return filteredSessions;
+        }
+
+        public IEnumerable<Sessie> GetByFilterActive(string filter)
+        {
+            List<Sessie> filteredSessions = new List<Sessie>();
+            foreach (Sessie s in _sessies)
+            {
+                if (s.Name.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 && s.IsActive)
+                {
+                    filteredSessions.Add(s);
+                }
+            }
+            return filteredSessions;
+        }
+
+        public IEnumerable<Sessie> GetByFilterNotActive(string filter)
+        {
+            List<Sessie> filteredSessions = new List<Sessie>();
+            foreach (Sessie s in _sessies)
+            {
+                if (s.Name.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 && !s.IsActive)
+                {
+                    filteredSessions.Add(s);
+                }
+            }
+            return filteredSessions;
+        }
+
+        public IEnumerable<Sessie> GetNotActive()
+        {
+            List<Sessie> filteredSessions = new List<Sessie>();
+            foreach (Sessie s in _sessies)
+            {
+                if (!s.IsActive)
+                {
+                    filteredSessions.Add(s);
+                }
+            }
+            return filteredSessions;
+        }
+		public Sessie GetGroupByCode(int groupId, int sessionCode)
+		{
+			Sessie sessie = _sessies
+				.Include(e => e.Box)
+					.ThenInclude(e => e.Exercises)
+						.ThenInclude(e => e.Modifiers)
+				.Include(e => e.Box)
+					.ThenInclude(e => e.Actions)
+				.Include(e => e.Box)
+					.ThenInclude(e => e.AccesCodes)
+				.Include(e => e.Groups)
+					.ThenInclude(e=> e.Pupils)
+				.SingleOrDefault( e => e.SessionCode == sessionCode);
+			
+			return sessie;
+			//return _sessies
+			//	.Include(e => e.Box)
+			//	.Include(e => e.Groups)
+			//	.SingleOrDefault(e => e.SessionCode == sessionCode);
+		}
+
+		public void SaveChanges()
         {
             _context.SaveChanges();
         }

@@ -11,7 +11,7 @@
     <span class="glyphicon glyphicon-home"></span> Terug
 </a>
 
-<h3>Groepen in deze sessie: </h3>
+<h3>Groepen in deze sessie[]: </h3>
 <div class="row list-group">
     @{
         if (ViewBag.Sessie.Groups.Count > 0)
@@ -30,11 +30,11 @@
                     </ul>
                     @{ if (!groep.Selected)
                         {
-                            <a role="button" class="btn btn-default" asp-area="" asp-controller="Leerling" asp-action="Waitscreen" asp-route-id="@groep.GroupId">Kies deze groep</a>
+                            <a role="button" class="btn btn-default" asp-area="" asp-controller="Leerling" asp-action="Waitscreen" asp-route-id="@groep.GroupId" asp-route-sessieId="@ViewBag.Sessie.SessionCode">Kies deze groep</a>
                         }
                         else
                         {
-                            <a role="button" class="btn btn-default disabled" asp-area="" asp-controller="Leerling" asp-action="Waitscreen" asp-route-id="@groep.GroupId">Kies deze groep</a>
+                            <a role="button" class="btn btn-default disabled" asp-area="" asp-controller="Leerling" asp-action="Waitscreen" asp-route-id="@groep.GroupId" asp-route-sessieId="@ViewBag.Sessie.SessionCode">Kies deze groep</a>
                             <p class="text pull-right">Deze groep is al gekozen</p>
                         }
                     }

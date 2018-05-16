@@ -10,6 +10,11 @@ namespace DotNetG2E.Models.Domain
 		IEnumerable<Sessie> GetAll();
         Sessie GetBy(int sessionCode);
         void SaveChanges();
-
-    }
+        IEnumerable<Sessie> GetByFilter(string filter);
+        IEnumerable<Sessie> GetByFilterActive(string sessionSearch);
+        IEnumerable<Sessie> GetByFilterNotActive(string sessionSearch);
+        IEnumerable<Sessie> GetActive();
+        IEnumerable<Sessie> GetNotActive();
+		Sessie GetGroupByCode(int groupId, int sessionCode);
+	}
 }
