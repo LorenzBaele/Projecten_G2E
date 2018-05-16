@@ -11,12 +11,12 @@ namespace DotNetG2E.Controllers
     public class LeerlingController : Controller
     {
         private readonly ISessieRepository _sessieRepository;
-		
 
-		public LeerlingController(ISessieRepository sessieRepository)
+
+        public LeerlingController(ISessieRepository sessieRepository)
         {
             _sessieRepository = sessieRepository;
-		
+
         }
 
         [HttpGet]
@@ -32,13 +32,13 @@ namespace DotNetG2E.Controllers
         {
 
             Sessie sessie = _sessieRepository.GetBy(leerlingCode);
-			
+
 
             if (sessie != null)
             {
                 if (sessie.IsActive)
                 {
-                  
+
                     ViewBag.Sessie = sessie;
                     return View("Selection");
                 }
@@ -60,14 +60,32 @@ namespace DotNetG2E.Controllers
         {
 
 
-			Sessie sessie = _sessieRepository.GetGroupByCode(id, sessieId);
-			Console.WriteLine("break point");
-			Group group = sessie.Groups.ToList().Find(e => e.GroupId == id);
-			group.Selected = true;
-			Console.WriteLine("break point");
-			_sessieRepository.SaveChanges();
-			
-            return View("WaitScreen");
+            Sessie sessie = _sessieRepository.GetBy(sessieId);
+            Console.WriteLine("break point");
+            Boolean allGroupsReady = true;
+            foreach (var groep in sessie.Groups)
+            {
+                if (!groep.Selected)
+                {
+                    allGroupsReady = false;
+                }
+            }
+
+            if (allGroupsReady)
+            {
+                return RedirectToAction("Exercise", "Leerling");
+            }
+            else
+            {
+                Group group = sessie.Groups.ToList().Find(e => e.GroupId == id);
+                group.Selected = true;
+                Console.WriteLine("break point");
+                _sessieRepository.SaveChanges();
+                return View("WaitScreen");
+            }
+
+
+
         }
 
         public IActionResult Exercise()
@@ -75,7 +93,7 @@ namespace DotNetG2E.Controllers
             return View("Exercise");
         }
 
-       
+
 
     }
 }

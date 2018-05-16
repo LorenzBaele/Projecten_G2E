@@ -18,8 +18,6 @@ namespace DotNetG2E.Controllers
         private int filterActive;
         private readonly ILeerkrachtRepository _leerkrachtRepository;
         private readonly ISessieRepository _sessieRepository;
-        //test
-        private Sessie _selectedSession;
 
 
         public LeerkrachtController(ILeerkrachtRepository leerkrachtRepository, ISessieRepository sessieRepository)
@@ -78,7 +76,6 @@ namespace DotNetG2E.Controllers
         [HttpGet]
         public IActionResult Sessie(int id)
         {
-            _selectedSession = _sessieRepository.GetBy(id);
             ViewBag.Sessie = _sessieRepository.GetBy(id);
             ViewBag.Groups = _sessieRepository.GetBy(id).Groups;
 
@@ -86,21 +83,20 @@ namespace DotNetG2E.Controllers
             return View();
         }
 
-        
+
         public IActionResult ActiveerSessie(int id)
         {
             Sessie sessie = _sessieRepository.GetBy(id);
             ViewBag.sessie = sessie;
             _sessieRepository.SaveChanges();
-            ViewBag.sessie = _sessieRepository.GetBy(id);
-            return View("~/Views/Leerkracht/Sessie.cshtml");
+            return View("Sessie");
         }
 
         public IActionResult DeactiveerSessie(int id)
         {
             Sessie sessie = _sessieRepository.GetBy(id);
             Boolean allGroupsUnselected = true;
-            foreach(var group in sessie.Groups)
+            foreach (var group in sessie.Groups)
             {
                 if (group.Selected)
                 {
@@ -111,13 +107,14 @@ namespace DotNetG2E.Controllers
             {
                 sessie.IsActive = false;
                 _sessieRepository.SaveChanges();
-            } else
+            }
+            else
             {
                 ViewBag.GroupsSelected = true;
             }
 
-            ViewBag.Sessie = sessie;
-           
+            ViewBag.sessie = sessie;
+
             return View("Sessie");
         }
 
@@ -127,10 +124,11 @@ namespace DotNetG2E.Controllers
             Group group = sessie.Groups.ToList().Find(e => e.GroupId == id);
             group.Selected = false;
             _sessieRepository.SaveChanges();
-            ViewBag.sessie = sessie;
+            ViewBag.Sessie = sessie;
 
             return View("Sessie");
-            
+
+
         }
     }
 }
