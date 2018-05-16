@@ -3,44 +3,40 @@
     ViewData["Title"] = "Selection";
 }
 
-<h2>Selecteer de groep waartoe jullie behoren:</h2>
-<a role="button" class="btn btn-warning pull-right" asp-area="" asp-controller="Leerling" asp-action="Index">terug</a>
-<!--<div class="container">-->
+<h1>@ViewBag.Sessie.Name</h1>
+<a asp-controller="Leerling" asp-action="Index" class="btn btn-info pull-right">
+    <span class="glyphicon glyphicon-home"></span> Terug
+</a>
+
 <h3>Groepen in deze sessie: </h3>
-
 <div class="row list-group">
-    @*@foreach (groep in geselecteerde sessie) ;*@
-    <div class="column list-group-item">
-        <h4 class="list-group-item-heading">Group 1</h4>
-        <ul>
-            <li>student 1</li>
-            <li>student 2</li>
-            <li>student 3</li>
-            <br />
-
-            <!--li <role="button" class="btn btn-default" asp-area="" asp-controller="Leerling" asp-action="WaitScreen">Kies deze groep</li>-->
-        </ul>
-        <a role="button" class="btn btn-default" asp-area="" asp-controller="Leerling" asp-action="Waitscreen">Kies deze groep</a>
-    </div>
-    <div class="column list-group-item">
-        <h4 class="list-group-item-heading">Group 2</h4>
-        <ul>
-            <li>jef</li>
-            <li>bob</li>
-            <li>stef</li>
-            <li>koen</li>
-        </ul>
-        <a role="button" class="btn btn-default" asp-area="" asp-controller="Leerling" asp-action="Waitscreen">Kies deze groep</a>
-    </div>
-    <div class="column list-group-item">
-        <h4 class="list-group-item-heading">Group 3</h4>
-        <ul>
-            <li>Anne</li>
-            <li>Sara</li>
-            <li>Mieke</li>
-            <li>Emma</li>
-        </ul>
-        <a role="button" class="btn btn-default" asp-area="" asp-controller="Leerling" asp-action="Waitscreen">Kies deze groep</a>
-    </div>
+    @{
+        if (ViewBag.Sessie.Groups.Count > 0)
+        {
+            foreach (var groep in ViewBag.Sessie.Groups)
+            {
+                <div class="column list-group-item">
+                    <h4 class="list-group-item-heading">@groep.Name</h4>
+                    <ul>
+                        @{
+                            foreach (var student in groep.Pupils)
+                            {
+                                <li> @student.Name</li>
+                            }
+                        }
+                    </ul>
+                    @{ if (!groep.Selected)
+                        {
+                            <a role="button" class="btn btn-default" asp-area="" asp-controller="Leerling" asp-action="Waitscreen" asp-route-id="@groep.GroupId">Kies deze groep</a>
+                        }
+                        else
+                        {
+                            <a role="button" class="btn btn-default disabled" asp-area="" asp-controller="Leerling" asp-action="Waitscreen" asp-route-id="@groep.GroupId">Kies deze groep</a>
+                            <p class="text pull-right">Deze groep is al gekozen</p>
+                        }
+                    }
+                </div>
+            }
+        }
+    }
 </div>
-<!--</div>-->

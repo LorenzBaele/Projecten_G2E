@@ -2,9 +2,15 @@
     ViewData["Title"] = "Index";
 }
 
+<a asp-controller="Home" asp-action="Index" class="btn btn-info pull-right">
+    <span class="glyphicon glyphicon-home"></span> Home
+</a>
+<br />
+
+
 <h2 class="text-center">Geef hier de code in die u kreeg van uw leerkracht:</h2>
 
-<form method="POST" class="text-center col-md-offset-3 col-md-6">
+<form method="post" class="text-center col-md-offset-3 col-md-6">
     <label for="leerlingCode">Uw code</label>
     <br />
     <input type="text" id="leerlingCode" placeholder="Hier komt de code" name="leerlingCode" class="form-control" />
