@@ -99,8 +99,12 @@ namespace DotNetG2E.Data.Repositories
             }
             return filteredSessions;
         }
+		public Sessie GetGroupByCode(int groupId, int sessionCode)
+		{
+			return _sessies.Include(e => e.Groups).SingleOrDefault(e => e.SessionCode == sessionCode);
+		}
 
-        public void SaveChanges()
+		public void SaveChanges()
         {
             _context.SaveChanges();
         }

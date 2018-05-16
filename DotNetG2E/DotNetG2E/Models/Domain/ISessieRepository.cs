@@ -15,5 +15,6 @@ namespace DotNetG2E.Models.Domain
         IEnumerable<Sessie> GetByFilterNotActive(string sessionSearch);
         IEnumerable<Sessie> GetActive();
         IEnumerable<Sessie> GetNotActive();
-    }
+		Sessie GetGroupByCode(int groupId, int sessionCode);
+	}
 }

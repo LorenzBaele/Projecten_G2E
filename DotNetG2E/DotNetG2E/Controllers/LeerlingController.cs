@@ -11,10 +11,12 @@ namespace DotNetG2E.Controllers
     public class LeerlingController : Controller
     {
         private readonly ISessieRepository _sessieRepository;
+		
 
-        public LeerlingController(ISessieRepository sessieRepository)
+		public LeerlingController(ISessieRepository sessieRepository)
         {
             _sessieRepository = sessieRepository;
+		
         }
 
         [HttpGet]
@@ -30,6 +32,8 @@ namespace DotNetG2E.Controllers
         {
 
             Sessie sessie = _sessieRepository.GetBy(leerlingCode);
+			
+
             if (sessie != null)
             {
                 if (sessie.IsActive)
@@ -59,8 +63,17 @@ namespace DotNetG2E.Controllers
 
         }
 
-        public IActionResult WaitScreen(int id)
+        public IActionResult WaitScreen(int id, int sessieId)
         {
+
+
+			Sessie sessie = _sessieRepository.GetGroupByCode(id, sessieId);
+			Console.WriteLine("break point");
+			Group group = sessie.Groups.ToList().Find(e => e.GroupId == id);
+			group.Selected = true;
+			Console.WriteLine("break point");
+			_sessieRepository.SaveChanges();
+			
             return View("WaitScreen");
         }
 
