@@ -101,7 +101,13 @@ namespace DotNetG2E.Data.Repositories
         }
 		public Sessie GetGroupByCode(int groupId, int sessionCode)
 		{
-			return _sessies.Include(e => e.Groups).SingleOrDefault(e => e.SessionCode == sessionCode);
+			Sessie sessie = _sessies.Include(e => e.Groups).SingleOrDefault(e => e.SessionCode == sessionCode);
+			
+			return sessie;
+			//return _sessies
+			//	.Include(e => e.Box)
+			//	.Include(e => e.Groups)
+			//	.SingleOrDefault(e => e.SessionCode == sessionCode);
 		}
 
 		public void SaveChanges()
