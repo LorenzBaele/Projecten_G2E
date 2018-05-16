@@ -31,6 +31,7 @@ namespace DotNetG2E.Data.Mappers
 			builder.HasMany(t => t.Pupils)
 				.WithOne()
 				.IsRequired()
+				.HasForeignKey(e => e.GroupId)
 				.OnDelete(DeleteBehavior.Restrict);
 
 

@@ -45,7 +45,20 @@ namespace DotNetG2E.Data.Repositories
 
         public Sessie GetBy(int sessionCode)
         {
-            return _sessies.SingleOrDefault(s => s.SessionCode == sessionCode);
+			Sessie sessie = _sessies
+				.Include(e => e.Box)
+					.ThenInclude(e => e.Exercises)
+						.ThenInclude(e => e.Modifiers)
+				.Include(e => e.Box)
+					.ThenInclude(e => e.Actions)
+				.Include(e => e.Box)
+					.ThenInclude(e => e.AccesCodes)
+				.Include(e => e.Groups)
+					.ThenInclude(e => e.Pupils)
+				.SingleOrDefault(e => e.SessionCode == sessionCode);
+
+			return sessie;
+
         }
 
         public IEnumerable<Sessie> GetByFilter(String filter)
@@ -101,7 +114,17 @@ namespace DotNetG2E.Data.Repositories
         }
 		public Sessie GetGroupByCode(int groupId, int sessionCode)
 		{
-			Sessie sessie = _sessies.Include(e => e.Groups).SingleOrDefault(e => e.SessionCode == sessionCode);
+			Sessie sessie = _sessies
+				.Include(e => e.Box)
+					.ThenInclude(e => e.Exercises)
+						.ThenInclude(e => e.Modifiers)
+				.Include(e => e.Box)
+					.ThenInclude(e => e.Actions)
+				.Include(e => e.Box)
+					.ThenInclude(e => e.AccesCodes)
+				.Include(e => e.Groups)
+					.ThenInclude(e=> e.Pupils)
+				.SingleOrDefault( e => e.SessionCode == sessionCode);
 			
 			return sessie;
 			//return _sessies
