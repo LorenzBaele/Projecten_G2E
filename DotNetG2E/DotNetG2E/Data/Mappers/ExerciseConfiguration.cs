@@ -40,6 +40,7 @@ namespace DotNetG2E.Data.Mappers
 			builder.HasMany(t => t.Modifiers)
 				.WithOne()
 				.IsRequired()
+				.HasForeignKey(m => m.ExerciseId)
 				.OnDelete(DeleteBehavior.Restrict);
 
 
