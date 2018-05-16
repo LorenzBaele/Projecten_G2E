@@ -2,6 +2,23 @@
     ViewData["Title"] = "Index";
 }
 
+@if (ViewBag.NotActive == true)
+{
+    <div class="alert alert-warning fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Whoops!</strong> Deze sessie is niet geactiveerd. Vraag je leerkracht om deze de activeren.
+    </div>
+}
+
+@if (ViewBag.NotFound == true)
+{
+    <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Whoops!</strong> De sessie die je zocht is niet gevonden.
+    </div>
+
+}
+
 <a asp-controller="Home" asp-action="Index" class="btn btn-info pull-right">
     <span class="glyphicon glyphicon-home"></span> Home
 </a>
