@@ -23,7 +23,7 @@ namespace DotNetG2E.Controllers
         public LeerkrachtController(ILeerkrachtRepository leerkrachtRepository, ISessieRepository sessieRepository)
         {
             filter = "";
-            filterActive = 2;
+            filterActive = 1;
             _leerkrachtRepository = leerkrachtRepository;
             _sessieRepository = sessieRepository;
         }

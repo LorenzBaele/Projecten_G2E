@@ -63,6 +63,7 @@ namespace DotNetG2E.Controllers
             Sessie sessie = _sessieRepository.GetBy(sessieId);
             Console.WriteLine("break point");
             Boolean allGroupsReady = true;
+
             foreach (var groep in sessie.Groups)
             {
                 if (!groep.Selected)
@@ -77,7 +78,8 @@ namespace DotNetG2E.Controllers
             }
             else
             {
-                Group group = sessie.Groups.ToList().Find(e => e.GroupId == id);
+				ViewBag.Sessie = sessie;
+				Group group = sessie.Groups.ToList().Find(e => e.GroupId == id);
                 group.Selected = true;
                 Console.WriteLine("break point");
                 _sessieRepository.SaveChanges();
