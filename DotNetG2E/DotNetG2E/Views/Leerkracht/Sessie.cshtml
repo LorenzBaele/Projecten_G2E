@@ -14,7 +14,7 @@
 {
     <div class="alert alert-danger fade in">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Alert!</strong> Je kan de sessie enkel deactiveren als alle groepen zijn gedeactiveerd. 
+        <strong>Alert!</strong> Je kan de sessie enkel deactiveren als alle groepen zijn gedeactiveerd.
     </div>
 }
 <head>
@@ -84,7 +84,6 @@
     {
         <a role="button" class="btn btn-default pull-right" asp-controller="leerkracht" asp-action="ActiveerSessie" asp-route-id="@ViewBag.Sessie.SessionCode">Activeer Sessie</a>
     }
-
 </div>
 
 <div class="container">
@@ -99,40 +98,40 @@
                     @{
                         if (ViewBag.Sessie.IsActive)
                         {
-                    <p><b>Status:</b> Actief</p>
+                            <p><b>Status:</b> Actief</p>
 
                         }
                         else
                         {
-            <p><b>Status:</b> Niet actief</p>
+                            <p><b>Status:</b> Niet actief</p>
 
-}
+                        }
                     }
-                    <p><b>Datum:</b> @ViewBag.Sessie.DayStarted</p>
+                    <p><b>Datum:</b> @ViewBag.Sessie.DayStarted.ToString("d")</p>
                     @{
                         if (ViewBag.Sessie.HasFeedback)
                         {
-                    <p><b>Feedback Type:</b> De leerling krijgt feedback indien hij een vraag niet kan oplossen.</p>
+                            <p><b>Feedback Type:</b> De leerling krijgt feedback indien hij een vraag niet kan oplossen.</p>
 
                         }
                         else
                         {
-            <p><b>Feedback Type:</b> De vraag wordt geblokkeerd na drie foute pogingen.</p>
+                            <p><b>Feedback Type:</b> De vraag wordt geblokkeerd na drie foute pogingen.</p>
 
-}
+                        }
                     }
 
                     @{
                         if (ViewBag.Sessie.IsDayEducation)
                         {
-                    <p><b>Type Sessie:</b> Deze sessie is bedoelt voor studenten die normaal dag onderwijs volgen.</p>
+                            <p><b>Type Sessie:</b> Deze sessie is bedoelt voor studenten die normaal dag onderwijs volgen.</p>
 
                         }
                         else
                         {
-            <p><b>Type Sessie:</b> Deze sessie is bedoelt voor studenten die afstandsonderwijs volgen.</p>
+                            <p><b>Type Sessie:</b> Deze sessie is bedoelt voor studenten die afstandsonderwijs volgen.</p>
 
-}
+                        }
                     }
                 </div>
             </div>
@@ -141,32 +140,32 @@
                 <div class="panel-body">
                     <p><b>Beschrijving:</b> @ViewBag.Sessie.Box.Description</p>
                     @{ foreach (var exercise in ViewBag.Sessie.Box.Exercises)
-        {
-                <p><b>Oefening @exercise.ExerciseId:</b> @exercise.Name</p>
-                <ul>
-                    <li><p><b>Categorie: </b>@exercise.Category</p></li>
-                    <li><p><b>Taak: </b><a href="~/images/@exercise.Task">@exercise.Task</a></p></li>
-                    <li><p><b>Feedback: </b><a href="~/images/@exercise.Task">@exercise.Feedback</a></p></li>
-                    <li><p><b>Doel: </b>@exercise.Goal</p></li>
-                    <li><p><b>Resultaat: </b>@exercise.Result</p></li>
-                    <li><p><b>Tijdslimiet: </b>@exercise.TimeLimit seconden </p></li>
-                </ul>
+                        {
+                            <p><b>Oefening @exercise.ExerciseId:</b> @exercise.Name</p>
+                            <ul>
+                                <li><p><b>Categorie: </b>@exercise.Category</p></li>
+                                <li><p><b>Taak: </b><a href="~/images/@exercise.Task">@exercise.Task</a></p></li>
+                                <li><p><b>Feedback: </b><a href="~/images/@exercise.Task">@exercise.Feedback</a></p></li>
+                                <li><p><b>Doel: </b>@exercise.Goal</p></li>
+                                <li><p><b>Resultaat: </b>@exercise.Result</p></li>
+                                <li><p><b>Tijdslimiet: </b>@exercise.TimeLimit seconden </p></li>
+                            </ul>
 
-}
+                        }
                     }
 
                     @{ foreach (var action in ViewBag.Sessie.Box.Actions)
-        {
-                <p><b>Actie @action.ActieId:</b> @action.Name</p>
+                        {
+                            <p><b>Actie @action.ActieId:</b> @action.Name</p>
 
-        }
+                        }
                     }
                     <b>Access Codes: </b>
                     @{ foreach (var accesscode in ViewBag.Sessie.Box.AccesCodes)
-        {
-               @accesscode.Code
+                        {
+                            @accesscode.Code
 
-        }
+                        }
                     }
                 </div>
             </div>
@@ -224,7 +223,6 @@
                                                     }
                                                 </ul>
                                                 <a role="button" class="btn btn-default" asp-area="" asp-controller="Leerkracht" asp-action="DeactiveerGroep" asp-route-id="@group.GroupId" asp-route-sessieId="@ViewBag.Sessie.SessionCode">Deactiveer deze groep</a>
-
                                             </div>
 
                                         }
@@ -281,7 +279,6 @@
                                             }
 
                                         }
-
                                     </ul>
                                 </a>
 
