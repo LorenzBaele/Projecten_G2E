@@ -89,7 +89,7 @@ namespace DotNetG2E
             //filter client side with javascript or server round trip
             //inbetween classes moeten er bij bij many to many
             //Lots and lots of bugs in this -_-
-            breakOutBoxInitializer.InitializeData().Wait();
+            //breakOutBoxInitializer.InitializeData().Wait();
         }
     }
 }

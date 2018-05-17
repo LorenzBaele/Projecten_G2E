@@ -88,6 +88,7 @@ namespace DotNetG2E.Controllers
         public IActionResult ActiveerSessie(int id)
         {
             Sessie sessie = _sessieRepository.GetBy(id);
+			sessie.IsActive = true;
             ViewBag.sessie = sessie;
             _sessieRepository.SaveChanges();
             return View("Sessie");
