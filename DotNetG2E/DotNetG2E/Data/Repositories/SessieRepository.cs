@@ -26,14 +26,7 @@ namespace DotNetG2E.Data.Repositories
 
         public IEnumerable<Sessie> GetActive()
         {
-            List<Sessie> filteredSessions = new List<Sessie>();
-            foreach (Sessie s in _sessies)
-            {
-                if (s.IsActive)
-                {
-                    filteredSessions.Add(s);
-                }
-            }
+            IEnumerable<Sessie> filteredSessions = _sessies.Where(s => s.IsActive);
             return filteredSessions;
         }
 
@@ -61,55 +54,27 @@ namespace DotNetG2E.Data.Repositories
 
         }
 
-        public IEnumerable<Sessie> GetByFilter(String filter)
+        public IEnumerable<Sessie> GetByFilter(String sessionSearch)
         {
-            List<Sessie> filteredSessions = new List<Sessie>();
-            foreach(Sessie s in _sessies)
-            {
-                if (s.Name.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0)
-                {
-                    filteredSessions.Add(s);
-                }
-            }
+            IEnumerable<Sessie> filteredSessions = _sessies.Where(s => s.Name.IndexOf(sessionSearch, StringComparison.OrdinalIgnoreCase) >= 0);
             return filteredSessions;
         }
 
-        public IEnumerable<Sessie> GetByFilterActive(string filter)
+        public IEnumerable<Sessie> GetByFilterActive(string sessionSearch)
         {
-            List<Sessie> filteredSessions = new List<Sessie>();
-            foreach (Sessie s in _sessies)
-            {
-                if (s.Name.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 && s.IsActive)
-                {
-                    filteredSessions.Add(s);
-                }
-            }
+            IEnumerable<Sessie> filteredSessions = _sessies.Where(s => s.Name.IndexOf(sessionSearch, StringComparison.OrdinalIgnoreCase) >= 0 && s.IsActive);
             return filteredSessions;
         }
 
-        public IEnumerable<Sessie> GetByFilterNotActive(string filter)
+        public IEnumerable<Sessie> GetByFilterNotActive(string sessionSearch)
         {
-            List<Sessie> filteredSessions = new List<Sessie>();
-            foreach (Sessie s in _sessies)
-            {
-                if (s.Name.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 && !s.IsActive)
-                {
-                    filteredSessions.Add(s);
-                }
-            }
+            IEnumerable<Sessie> filteredSessions = _sessies.Where(s => s.Name.IndexOf(sessionSearch, StringComparison.OrdinalIgnoreCase) >= 0 && !s.IsActive);
             return filteredSessions;
         }
 
         public IEnumerable<Sessie> GetNotActive()
         {
-            List<Sessie> filteredSessions = new List<Sessie>();
-            foreach (Sessie s in _sessies)
-            {
-                if (!s.IsActive)
-                {
-                    filteredSessions.Add(s);
-                }
-            }
+            IEnumerable<Sessie> filteredSessions = _sessies.Where(s => !s.IsActive);
             return filteredSessions;
         }
 		public Sessie GetGroupByCode(int groupId, int sessionCode)
